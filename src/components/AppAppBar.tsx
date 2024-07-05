@@ -1,19 +1,23 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
-import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
-import MenuIcon from "@mui/icons-material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+
+import {siteColors} from "../system/constants.ts";
 
 const logoStyle = {
-  width: "140px",
+  width: "75px",
   height: "auto",
   cursor: "pointer",
+  marginLeft: "24px",
+  paddingRight: "12px",
 };
 
 function AppAppBar() {
@@ -51,25 +55,21 @@ function AppAppBar() {
         <Container maxWidth="lg">
           <Toolbar
             variant="regular"
-            sx={(theme) => ({
+            sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               flexShrink: 0,
               borderRadius: "999px",
-              bgcolor:
-                theme.palette.mode === "light"
-                  ? "rgba(255, 255, 255, 0.4)"
-                  : "rgba(0, 0, 0, 0.4)",
+              bgcolor: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(24px)",
               maxHeight: 40,
               border: "1px solid",
               borderColor: "divider",
-              boxShadow:
-                theme.palette.mode === "light"
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                  : "0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)",
-            })}
+              boxShadow: `0 0 1px ${siteColors.darkGrey}, 
+                1px 1.5px 2px -1px ${siteColors.darkGrey}, 
+                4px 4px 12px -2.5px ${siteColors.darkGrey}`,
+            }}
           >
             <Box
               sx={{
@@ -82,10 +82,10 @@ function AppAppBar() {
             >
               <img
                 src={
-                  "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
+                  "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="logo"
               />
               <Box sx={{display: {xs: "none", md: "flex"}}}>
                 <MenuItem
