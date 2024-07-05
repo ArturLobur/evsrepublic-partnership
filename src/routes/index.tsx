@@ -1,6 +1,4 @@
 import {createFileRoute} from "@tanstack/react-router";
-import * as React from "react";
-import {PaletteMode} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -14,25 +12,28 @@ import Highlights from "../components/Highlights.tsx";
 import Pricing from "../components/Pricing.tsx";
 import FAQ from "../components/FAQ.tsx";
 import Footer from "../components/Footer.tsx";
+import {siteColors} from "../system/constants.ts";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
 function LandingPage() {
-  const [mode, setMode] = React.useState<PaletteMode>("light");
-  const defaultTheme = createTheme({palette: {mode}});
-
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+  const theme = createTheme({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: siteColors.neon,
+      },
+    },
+  });
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+      <AppAppBar />
       <Hero />
-      <Box sx={{bgcolor: "background.default"}}>
+      <Box>
         <LogoCollection />
         <Features />
         <Divider />

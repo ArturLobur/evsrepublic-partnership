@@ -1,5 +1,4 @@
 import * as React from "react";
-import {PaletteMode} from "@mui/material";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,7 +9,6 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
-import ToggleColorMode from "./ToggleColorMode.tsx";
 
 const logoStyle = {
   width: "140px",
@@ -18,12 +16,7 @@ const logoStyle = {
   cursor: "pointer",
 };
 
-interface AppAppBarProps {
-  mode: PaletteMode;
-  toggleColorMode: () => void;
-}
-
-function AppAppBar({mode, toggleColorMode}: AppAppBarProps) {
+function AppAppBar() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -144,7 +137,6 @@ function AppAppBar({mode, toggleColorMode}: AppAppBarProps) {
                 alignItems: "center",
               }}
             >
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               <Button
                 color="primary"
                 variant="text"
@@ -192,12 +184,7 @@ function AppAppBar({mode, toggleColorMode}: AppAppBarProps) {
                       alignItems: "end",
                       flexGrow: 1,
                     }}
-                  >
-                    <ToggleColorMode
-                      mode={mode}
-                      toggleColorMode={toggleColorMode}
-                    />
-                  </Box>
+                  ></Box>
                   <MenuItem onClick={() => scrollToSection("features")}>
                     Features
                   </MenuItem>
