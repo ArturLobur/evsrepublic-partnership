@@ -6,20 +6,18 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import {siteColors} from "../system/constants.ts";
 
 export default function Hero() {
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={{
         width: "100%",
-        backgroundImage:
-          theme.palette.mode === "light"
-            ? "linear-gradient(180deg, #CEE5FD, #FFF)"
-            : `linear-gradient(#02294F, ${alpha("#090E10", 0.0)})`,
+        backgroundImage: `linear-gradient(${siteColors.darkGrey}, ${alpha("#090E10", 0.0)})`,
         backgroundSize: "100% 20%",
         backgroundRepeat: "no-repeat",
-      })}
+      }}
     >
       <Container
         sx={{

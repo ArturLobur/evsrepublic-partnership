@@ -1,5 +1,5 @@
-import {createFileRoute} from "@tanstack/react-router";
 import CssBaseline from "@mui/material/CssBaseline";
+import {createFileRoute} from "@tanstack/react-router";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
