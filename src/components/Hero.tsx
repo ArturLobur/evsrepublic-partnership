@@ -6,6 +6,7 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+
 import {siteColors} from "../system/constants.ts";
 
 export default function Hero() {

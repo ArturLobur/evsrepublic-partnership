@@ -1,17 +1,18 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import {createFileRoute} from "@tanstack/react-router";
 import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
-import {ThemeProvider, createTheme} from "@mui/material/styles";
+import {createTheme,ThemeProvider} from "@mui/material/styles";
+import {createFileRoute} from "@tanstack/react-router";
+
 import AppAppBar from "../components/AppAppBar.tsx";
-import Hero from "../components/Hero.tsx";
-import LogoCollection from "../components/LogoCollection.tsx";
-import Features from "../components/Features.tsx";
-import Testimonials from "../components/Testimonials.tsx";
-import Highlights from "../components/Highlights.tsx";
-import Pricing from "../components/Pricing.tsx";
 import FAQ from "../components/FAQ.tsx";
+import Features from "../components/Features.tsx";
 import Footer from "../components/Footer.tsx";
+import Hero from "../components/Hero.tsx";
+import Highlights from "../components/Highlights.tsx";
+import LogoCollection from "../components/LogoCollection.tsx";
+import Pricing from "../components/Pricing.tsx";
+import Testimonials from "../components/Testimonials.tsx";
 import {siteColors} from "../system/constants.ts";
 
 export const Route = createFileRoute("/")({
