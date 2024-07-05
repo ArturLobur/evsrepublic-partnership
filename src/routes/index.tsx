@@ -1,7 +1,8 @@
+import {createTheme} from "@mui/material";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
-import {createTheme,ThemeProvider} from "@mui/material/styles";
+import {ThemeProvider} from "@mui/material/styles";
 import {createFileRoute} from "@tanstack/react-router";
 
 import AppAppBar from "../components/AppAppBar.tsx";

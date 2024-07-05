@@ -81,6 +81,8 @@ function AppAppBar() {
               }}
             >
               <img
+                id="logo"
+                onClick={() => scrollToSection("logo")}
                 src={
                   "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
                 }
