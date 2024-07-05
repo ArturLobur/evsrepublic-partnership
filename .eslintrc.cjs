@@ -19,7 +19,6 @@ module.exports = {
     'no-console': 'error',
     'no-unused-vars': ['error', { vars: 'local' }],
     '@typescript-eslint/no-unused-vars': ['error', { vars: 'local' }],
-    'react/no-multi-comp': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
