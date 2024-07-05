@@ -1,4 +1,5 @@
 import {createFileRoute} from "@tanstack/react-router";
+import * as React from "react";
 import {PaletteMode} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -13,38 +14,38 @@ import Highlights from "../components/Highlights.tsx";
 import Pricing from "../components/Pricing.tsx";
 import FAQ from "../components/FAQ.tsx";
 import Footer from "../components/Footer.tsx";
-import {useState} from "react";
 
 export const Route = createFileRoute("/")({
-  component: () => {
-    const [mode, setMode] = useState<PaletteMode>("light");
-
-    const defaultTheme = createTheme({palette: {mode}});
-
-    const toggleColorMode = () => {
-      setMode((prev) => (prev === "dark" ? "light" : "dark"));
-    };
-
-    return (
-      <ThemeProvider theme={defaultTheme}>
-        <CssBaseline />
-        <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
-        <Hero />
-        <Box sx={{bgcolor: "background.default"}}>
-          <LogoCollection />
-          <Features />
-          <Divider />
-          <Testimonials />
-          <Divider />
-          <Highlights />
-          <Divider />
-          <Pricing />
-          <Divider />
-          <FAQ />
-          <Divider />
-          <Footer />
-        </Box>
-      </ThemeProvider>
-    );
-  },
+  component: LandingPage,
 });
+
+function LandingPage() {
+  const [mode, setMode] = React.useState<PaletteMode>("light");
+  const defaultTheme = createTheme({palette: {mode}});
+
+  const toggleColorMode = () => {
+    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+      <Hero />
+      <Box sx={{bgcolor: "background.default"}}>
+        <LogoCollection />
+        <Features />
+        <Divider />
+        <Testimonials />
+        <Divider />
+        <Highlights />
+        <Divider />
+        <Pricing />
+        <Divider />
+        <FAQ />
+        <Divider />
+        <Footer />
+      </Box>
+    </ThemeProvider>
+  );
+}
