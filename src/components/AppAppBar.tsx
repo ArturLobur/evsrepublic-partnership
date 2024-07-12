@@ -13,6 +13,7 @@ import * as React from "react";
 import {siteColors} from "../system/constants.ts";
 import ModalWindow from "./ModalWindow.tsx";
 import SignIn from "./SignIn.tsx";
+import SignUp from "./SignUp.tsx";
 
 const logoStyle = {
   width: "75px",
@@ -25,6 +26,7 @@ const logoStyle = {
 function AppAppBar() {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [modalOpen, setModalOpen] = React.useState(true);
+  const [modalType, setModalType] = React.useState<null | string>(null);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpenMenu(newOpen);
@@ -43,6 +45,13 @@ function AppAppBar() {
       setOpenMenu(false);
     }
   };
+
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setModalType(event.currentTarget.name);
+    setModalOpen(!modalOpen);
+  };
+
+  const formType = modalType === "sign-in" ? <SignIn /> : <SignUp />;
 
   return (
     <div>
@@ -146,7 +155,8 @@ function AppAppBar() {
                 color="primary"
                 variant="text"
                 size="small"
-                onClick={() => setModalOpen(!modalOpen)}
+                name="sign-in"
+                onClick={handleButtonClick}
               >
                 Sign in
               </Button>
@@ -154,7 +164,8 @@ function AppAppBar() {
                 color="primary"
                 variant="contained"
                 size="small"
-                onClick={() => setModalOpen(!modalOpen)}
+                name="sign-up"
+                onClick={handleButtonClick}
               >
                 Sign up
               </Button>
@@ -210,9 +221,7 @@ function AppAppBar() {
                     <Button
                       color="primary"
                       variant="contained"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-up/"
-                      target="_blank"
+                      onClick={() => setModalOpen(!modalOpen)}
                       sx={{width: "100%"}}
                     >
                       Sign up
@@ -222,9 +231,7 @@ function AppAppBar() {
                     <Button
                       color="primary"
                       variant="outlined"
-                      component="a"
-                      href="/material-ui/getting-started/templates/sign-in/"
-                      target="_blank"
+                      onClick={() => setModalOpen(!modalOpen)}
                       sx={{width: "100%"}}
                     >
                       Sign in
@@ -238,7 +245,7 @@ function AppAppBar() {
             onOpen={modalOpen}
             onClose={() => setModalOpen(!modalOpen)}
           >
-            <SignIn />
+            {formType}
           </ModalWindow>
         </Container>
       </AppBar>

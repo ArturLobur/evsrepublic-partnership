@@ -22,6 +22,7 @@ const ModalWindow: FC<ModalWindowProps> = (props) => (
       sx={{
         position: "absolute",
         maxWidth: 450,
+        minWidth: 360,
         bgcolor: `${siteColors.black}`,
         border: "2px solid #000",
         boxShadow: 24,
