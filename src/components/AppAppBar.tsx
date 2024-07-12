@@ -11,6 +11,8 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
+import ModalWindow from "./ModalWindow.tsx";
+import SignIn from "./SignIn.tsx";
 
 const logoStyle = {
   width: "75px",
@@ -21,10 +23,11 @@ const logoStyle = {
 };
 
 function AppAppBar() {
-  const [open, setOpen] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(true);
 
   const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
+    setOpenMenu(newOpen);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -37,7 +40,7 @@ function AppAppBar() {
         top: targetScroll,
         behavior: "smooth",
       });
-      setOpen(false);
+      setOpenMenu(false);
     }
   };
 
@@ -143,9 +146,7 @@ function AppAppBar() {
                 color="primary"
                 variant="text"
                 size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-in/"
-                target="_blank"
+                onClick={() => setModalOpen(!modalOpen)}
               >
                 Sign in
               </Button>
@@ -153,9 +154,7 @@ function AppAppBar() {
                 color="primary"
                 variant="contained"
                 size="small"
-                component="a"
-                href="/material-ui/getting-started/templates/sign-up/"
-                target="_blank"
+                onClick={() => setModalOpen(!modalOpen)}
               >
                 Sign up
               </Button>
@@ -170,7 +169,11 @@ function AppAppBar() {
               >
                 <MenuIcon />
               </Button>
-              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+              <Drawer
+                anchor="right"
+                open={openMenu}
+                onClose={toggleDrawer(false)}
+              >
                 <Box
                   sx={{
                     minWidth: "60dvw",
@@ -231,6 +234,12 @@ function AppAppBar() {
               </Drawer>
             </Box>
           </Toolbar>
+          <ModalWindow
+            onOpen={modalOpen}
+            onClose={() => setModalOpen(!modalOpen)}
+          >
+            <SignIn />
+          </ModalWindow>
         </Container>
       </AppBar>
     </div>
