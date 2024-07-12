@@ -1,16 +1,14 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
+import MobileMenu from "./MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
 import SignIn from "./SignIn.tsx";
 import SignUp from "./SignUp.tsx";
@@ -48,6 +46,7 @@ function AppAppBar() {
 
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setModalType(event.currentTarget.name);
+    setOpenMenu(false);
     setModalOpen(!modalOpen);
   };
 
@@ -170,78 +169,12 @@ function AppAppBar() {
                 Sign up
               </Button>
             </Box>
-            <Box sx={{display: {sm: "", md: "none"}}}>
-              <Button
-                variant="text"
-                color="primary"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-                sx={{minWidth: "30px", p: "4px"}}
-              >
-                <MenuIcon />
-              </Button>
-              <Drawer
-                anchor="right"
-                open={openMenu}
-                onClose={toggleDrawer(false)}
-              >
-                <Box
-                  sx={{
-                    minWidth: "60dvw",
-                    p: 2,
-                    backgroundColor: "background.paper",
-                    flexGrow: 1,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "end",
-                      flexGrow: 1,
-                    }}
-                  ></Box>
-                  <MenuItem onClick={() => scrollToSection("features")}>
-                    Features
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("testimonials")}>
-                    Testimonials
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("highlights")}>
-                    Highlights
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("pricing")}>
-                    Pricing
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("faq")}>
-                    FAQ
-                  </MenuItem>
-                  <Divider />
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      onClick={handleButtonClick}
-                      sx={{width: "100%"}}
-                      name="sign-up"
-                    >
-                      Sign up
-                    </Button>
-                  </MenuItem>
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      onClick={handleButtonClick}
-                      sx={{width: "100%"}}
-                      name="sign-in"
-                    >
-                      Sign in
-                    </Button>
-                  </MenuItem>
-                </Box>
-              </Drawer>
-            </Box>
+            <MobileMenu
+              toggleDrawer={toggleDrawer}
+              openMenu={openMenu}
+              scrollToSection={scrollToSection}
+              handleButtonClick={handleButtonClick}
+            />
           </Toolbar>
           <ModalWindow
             onOpen={modalOpen}
