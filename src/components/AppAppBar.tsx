@@ -221,8 +221,9 @@ function AppAppBar() {
                     <Button
                       color="primary"
                       variant="contained"
-                      onClick={() => setModalOpen(!modalOpen)}
+                      onClick={handleButtonClick}
                       sx={{width: "100%"}}
+                      name="sign-up"
                     >
                       Sign up
                     </Button>
@@ -231,8 +232,9 @@ function AppAppBar() {
                     <Button
                       color="primary"
                       variant="outlined"
-                      onClick={() => setModalOpen(!modalOpen)}
+                      onClick={handleButtonClick}
                       sx={{width: "100%"}}
+                      name="sign-in"
                     >
                       Sign in
                     </Button>
