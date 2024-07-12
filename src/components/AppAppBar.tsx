@@ -1,25 +1,14 @@
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
+import Menu from "./Menu.tsx";
 import MobileMenu from "./MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
 import SignIn from "./SignIn.tsx";
 import SignUp from "./SignUp.tsx";
-
-const logoStyle = {
-  width: "75px",
-  height: "auto",
-  cursor: "pointer",
-  marginLeft: "24px",
-  paddingRight: "12px",
-};
 
 function AppAppBar() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -53,138 +42,53 @@ function AppAppBar() {
   const formType = modalType === "sign-in" ? <SignIn /> : <SignUp />;
 
   return (
-    <div>
-      <AppBar
-        position="fixed"
-        sx={{
-          boxShadow: 0,
-          bgcolor: "transparent",
-          backgroundImage: "none",
-          mt: 2,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Toolbar
-            variant="regular"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexShrink: 0,
-              borderRadius: "999px",
-              bgcolor: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(24px)",
-              maxHeight: 40,
-              border: "1px solid",
-              borderColor: "divider",
-              boxShadow: `0 0 1px ${siteColors.darkGrey}, 
+    <AppBar
+      position="fixed"
+      sx={{
+        boxShadow: 0,
+        backgroundColor: "transparent",
+        backgroundImage: "none",
+        mt: 2,
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar
+          variant="regular"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexShrink: 0,
+            borderRadius: "999px",
+            bgcolor: "rgba(0, 0, 0, 0.4)",
+            backdropFilter: "blur(24px)",
+            maxHeight: 40,
+            border: "1px solid",
+            borderColor: "divider",
+            boxShadow: `0 0 1px ${siteColors.darkGrey}, 
                 1px 1.5px 2px -1px ${siteColors.darkGrey}, 
                 4px 4px 12px -2.5px ${siteColors.darkGrey}`,
-            }}
-          >
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: "flex",
-                alignItems: "center",
-                ml: "-18px",
-                px: 0,
-              }}
-            >
-              <img
-                id="logo"
-                onClick={() => scrollToSection("logo")}
-                src={
-                  "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
-                }
-                style={logoStyle}
-                alt="logo"
-              />
-              <Box sx={{display: {xs: "none", md: "flex"}}}>
-                <MenuItem
-                  onClick={() => scrollToSection("features")}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Features
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("testimonials")}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Testimonials
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("highlights")}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("pricing")}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Pricing
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("faq")}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    FAQ
-                  </Typography>
-                </MenuItem>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: {xs: "none", md: "flex"},
-                gap: 0.5,
-                alignItems: "center",
-              }}
-            >
-              <Button
-                color="primary"
-                variant="text"
-                size="small"
-                name="sign-in"
-                onClick={handleButtonClick}
-              >
-                Sign in
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                size="small"
-                name="sign-up"
-                onClick={handleButtonClick}
-              >
-                Sign up
-              </Button>
-            </Box>
-            <MobileMenu
-              toggleDrawer={toggleDrawer}
-              openMenu={openMenu}
-              scrollToSection={scrollToSection}
-              handleButtonClick={handleButtonClick}
-            />
-          </Toolbar>
-          <ModalWindow
-            onOpen={modalOpen}
-            onClose={() => setModalOpen(!modalOpen)}
-          >
-            {formType}
-          </ModalWindow>
-        </Container>
-      </AppBar>
-    </div>
+          }}
+        >
+          <Menu
+            scrollToSection={scrollToSection}
+            handleButtonClick={handleButtonClick}
+          />
+          <MobileMenu
+            toggleDrawer={toggleDrawer}
+            openMenu={openMenu}
+            scrollToSection={scrollToSection}
+            handleButtonClick={handleButtonClick}
+          />
+        </Toolbar>
+        <ModalWindow
+          onOpen={modalOpen}
+          onClose={() => setModalOpen(!modalOpen)}
+        >
+          {formType}
+        </ModalWindow>
+      </Container>
+    </AppBar>
   );
 }
 

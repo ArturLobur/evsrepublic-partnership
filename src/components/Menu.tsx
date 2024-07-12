@@ -1,0 +1,93 @@
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import React from "react";
+
+const logoStyle = {
+  width: "75px",
+  height: "auto",
+  cursor: "pointer",
+  marginLeft: "24px",
+  paddingRight: "12px",
+};
+
+interface MenuProps {
+  scrollToSection: (_sectionId: string) => void;
+  handleButtonClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const Menu: React.FC<MenuProps> = ({scrollToSection, handleButtonClick}) => {
+  const menuItems = [
+    {name: "features", label: "Features"},
+    {name: "testimonials", label: "Testimonials"},
+    {name: "highlights", label: "Highlights"},
+    {name: "pricing", label: "Pricing"},
+    {name: "faq", label: "FAQ"},
+  ];
+
+  return (
+    <>
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          alignItems: "center",
+          ml: "-18px",
+          px: 0,
+        }}
+      >
+        <img
+          id="logo"
+          onClick={() => scrollToSection("logo")}
+          src={
+            "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
+          }
+          style={logoStyle}
+          alt="logo"
+        />
+        <Box sx={{display: {xs: "none", md: "flex"}}}>
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.name}
+              onClick={() => scrollToSection(item.name)}
+              sx={{py: "6px", px: "12px"}}
+            >
+              <Typography variant="body2" color="text.primary">
+                {item.label}
+              </Typography>
+            </MenuItem>
+          ))}
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          display: {xs: "none", md: "flex"},
+          gap: 0.5,
+          alignItems: "center",
+        }}
+      >
+        <Button
+          color="primary"
+          variant="text"
+          size="small"
+          name="sign-in"
+          onClick={handleButtonClick}
+        >
+          Sign in
+        </Button>
+        <Button
+          color="primary"
+          variant="contained"
+          size="small"
+          name="sign-up"
+          onClick={handleButtonClick}
+        >
+          Sign up
+        </Button>
+      </Box>
+    </>
+  );
+};
+
+export default Menu;
