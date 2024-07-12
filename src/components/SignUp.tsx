@@ -1,4 +1,4 @@
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -31,7 +31,7 @@ export default function SignUp() {
       }}
     >
       <Avatar sx={{m: 1}}>
-        <LockOutlinedIcon />
+        <PersonAddOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
         Sign up

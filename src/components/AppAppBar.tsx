@@ -25,7 +25,7 @@ const logoStyle = {
 
 function AppAppBar() {
   const [openMenu, setOpenMenu] = React.useState(false);
-  const [modalOpen, setModalOpen] = React.useState(true);
+  const [modalOpen, setModalOpen] = React.useState(false);
   const [modalType, setModalType] = React.useState<null | string>(null);
 
   const toggleDrawer = (newOpen: boolean) => () => {
