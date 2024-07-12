@@ -4,8 +4,8 @@ import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
-import Menu from "./Menu.tsx";
-import MobileMenu from "./MobileMenu.tsx";
+import Menu from "./Menu/Menu.tsx";
+import MobileMenu from "./Menu/MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
 import SignIn from "./SignIn.tsx";
 import SignUp from "./SignUp.tsx";

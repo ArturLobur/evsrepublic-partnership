@@ -18,7 +18,15 @@ module.exports = {
     'no-debugger': 'error',
     'no-console': 'error',
     'no-unused-vars': ['error', { vars: 'local' }],
-    '@typescript-eslint/no-unused-vars': ['error', { vars: 'local' }],
+    '@typescript-eslint/no-unused-vars':
+      ['error',
+        { vars: 'local',
+          argsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_"
+        }
+      ],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
