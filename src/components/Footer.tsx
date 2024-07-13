@@ -11,8 +11,9 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 const logoStyle = {
-  width: "140px",
+  width: "95px",
   height: "auto",
+  marginLeft: 16,
 };
 
 function Copyright() {
@@ -57,10 +58,10 @@ export default function Footer() {
             <Box sx={{ml: "-15px"}}>
               <img
                 src={
-                  "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
+                  "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="logo of footer"
               />
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
