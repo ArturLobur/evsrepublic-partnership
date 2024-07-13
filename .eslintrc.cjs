@@ -17,16 +17,9 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'error',
     'no-debugger': 'error',
     'no-console': 'error',
-    'no-unused-vars': ['error', { vars: 'local' }],
-    '@typescript-eslint/no-unused-vars':
-      ['error',
-        { vars: 'local',
-          argsIgnorePattern: '^_',
-          destructuredArrayIgnorePattern: "^_",
-          varsIgnorePattern: "^_",
-          caughtErrorsIgnorePattern: "^_"
-        }
-      ],
+    'no-unused-vars': ['error', { vars: 'local',
+      argsIgnorePattern: '^_',
+    }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
