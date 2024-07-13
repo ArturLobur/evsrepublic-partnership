@@ -6,3 +6,11 @@ export const siteColors = {
   black: "#1c1d24",
   darkGrey: "#46484d",
 };
+
+export const menuItems = [
+  {name: "features", label: "Features"},
+  {name: "testimonials", label: "Testimonials"},
+  {name: "highlights", label: "Highlights"},
+  {name: "pricing", label: "Pricing"},
+  {name: "faq", label: "FAQ"},
+];

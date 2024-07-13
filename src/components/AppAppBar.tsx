@@ -2,13 +2,14 @@ import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
+import {useCallback} from "react";
 
 import {siteColors} from "../system/constants.ts";
+import SignIn from "./auth/SignIn.tsx";
+import SignUp from "./auth/SignUp.tsx";
 import Menu from "./Menu/Menu.tsx";
 import MobileMenu from "./Menu/MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
-import SignIn from "./SignIn.tsx";
-import SignUp from "./SignUp.tsx";
 
 function AppAppBar() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -33,11 +34,14 @@ function AppAppBar() {
     }
   };
 
-  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setModalType(event.currentTarget.name);
-    setOpenMenu(false);
-    setModalOpen(!modalOpen);
-  };
+  const handleButtonClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      setModalType(event.currentTarget.name);
+      setOpenMenu(false);
+      setModalOpen(!modalOpen);
+    },
+    [modalOpen],
+  );
 
   const formType = modalType === "sign-in" ? <SignIn /> : <SignUp />;
 
@@ -72,13 +76,13 @@ function AppAppBar() {
         >
           <Menu
             scrollToSection={scrollToSection}
-            handleButtonClick={handleButtonClick}
+            onButtonClick={handleButtonClick}
           />
           <MobileMenu
             toggleDrawer={toggleDrawer}
             openMenu={openMenu}
             scrollToSection={scrollToSection}
-            handleButtonClick={handleButtonClick}
+            onButtonClick={handleButtonClick}
           />
         </Toolbar>
         <ModalWindow

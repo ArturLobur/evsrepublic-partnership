@@ -4,6 +4,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
+import {menuItems} from "../../system/constants.ts";
+
 const logoStyle = {
   width: "75px",
   height: "auto",
@@ -14,18 +16,10 @@ const logoStyle = {
 
 interface MenuProps {
   scrollToSection: (_sectionId: string) => void;
-  handleButtonClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
+  onButtonClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Menu: React.FC<MenuProps> = ({scrollToSection, handleButtonClick}) => {
-  const menuItems = [
-    {name: "features", label: "Features"},
-    {name: "testimonials", label: "Testimonials"},
-    {name: "highlights", label: "Highlights"},
-    {name: "pricing", label: "Pricing"},
-    {name: "faq", label: "FAQ"},
-  ];
-
+const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
   return (
     <>
       <Box
@@ -72,7 +66,7 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, handleButtonClick}) => {
           variant="text"
           size="small"
           name="sign-in"
-          onClick={handleButtonClick}
+          onClick={onButtonClick}
         >
           Sign in
         </Button>
@@ -81,7 +75,7 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, handleButtonClick}) => {
           variant="contained"
           size="small"
           name="sign-up"
-          onClick={handleButtonClick}
+          onClick={onButtonClick}
         >
           Sign up
         </Button>

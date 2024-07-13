@@ -6,18 +6,20 @@ import Drawer from "@mui/material/Drawer";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 
+import {menuItems} from "../../system/constants.ts";
+
 interface MobileMenuProps {
   toggleDrawer: (_newOpen: boolean) => () => void;
   openMenu: boolean;
   scrollToSection: (_sectionId: string) => void;
-  handleButtonClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
+  onButtonClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
   toggleDrawer,
   openMenu,
   scrollToSection,
-  handleButtonClick,
+  onButtonClick,
 }) => {
   return (
     <Box sx={{display: {sm: "", md: "none"}}}>
@@ -47,25 +49,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               flexGrow: 1,
             }}
           ></Box>
-          <MenuItem onClick={() => scrollToSection("features")}>
-            Features
-          </MenuItem>
-          <MenuItem onClick={() => scrollToSection("testimonials")}>
-            Testimonials
-          </MenuItem>
-          <MenuItem onClick={() => scrollToSection("highlights")}>
-            Highlights
-          </MenuItem>
-          <MenuItem onClick={() => scrollToSection("pricing")}>
-            Pricing
-          </MenuItem>
-          <MenuItem onClick={() => scrollToSection("faq")}>FAQ</MenuItem>
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.name}
+              onClick={() => scrollToSection(item.name)}
+            >
+              {item.label}
+            </MenuItem>
+          ))}
           <Divider />
           <MenuItem>
             <Button
               color="primary"
               variant="contained"
-              onClick={handleButtonClick}
+              onClick={onButtonClick}
               sx={{width: "100%"}}
               name="sign-up"
             >
@@ -76,7 +73,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             <Button
               color="primary"
               variant="outlined"
-              onClick={handleButtonClick}
+              onClick={onButtonClick}
               sx={{width: "100%"}}
               name="sign-in"
             >
