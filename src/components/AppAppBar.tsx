@@ -5,8 +5,8 @@ import * as React from "react";
 import {useCallback} from "react";
 
 import {siteColors} from "../system/constants.ts";
-import SignIn from "./auth/SignIn.tsx";
-import SignUp from "./auth/SignUp.tsx";
+import SignIn from "./Auth/SignIn.tsx";
+import SignUp from "./Auth/SignUp.tsx";
 import Menu from "./Menu/Menu.tsx";
 import MobileMenu from "./Menu/MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
