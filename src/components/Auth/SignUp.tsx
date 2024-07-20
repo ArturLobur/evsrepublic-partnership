@@ -60,7 +60,7 @@ export default function SignUp() {
       <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
         <TextField
           margin="normal"
-          autoComplete="fname"
+          autoComplete="given-name"
           name="firstName"
           variant="outlined"
           required
@@ -77,7 +77,7 @@ export default function SignUp() {
           id="lastName"
           label="Last Name"
           name="lastName"
-          autoComplete="lname"
+          autoComplete="family-name"
         />
         <TextField
           margin="normal"

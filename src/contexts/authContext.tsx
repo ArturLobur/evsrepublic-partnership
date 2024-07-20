@@ -35,12 +35,14 @@ export function AuthProvider({children}) {
 
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
-      const docRef = doc(db, "Users", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setCurrentUser(docSnap.data());
-      } else {
-        console.log("User is not logged in");
+      if (user) {
+        const docRef = doc(db, "Users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setCurrentUser(docSnap.data());
+        } else {
+          console.log("User is not logged in");
+        }
       }
     });
   };
