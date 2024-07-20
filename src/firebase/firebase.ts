@@ -1,15 +1,16 @@
 import {initializeApp} from "firebase/app";
 import {getAuth} from "firebase/auth";
+import {getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBmRQ9MojwTzGVI5FzKz1EzNmV9sX4LlWw",
-  authDomain: "ev-s-partership.firebaseapp.com",
-  projectId: "ev-s-partership",
-  storageBucket: "ev-s-partership.appspot.com",
-  messagingSenderId: "798419458964",
-  appId: "1:798419458964:web:22b09fd295a009e909cd81",
-  measurementId: "G-NRT76VPW6J",
+  apiKey: "AIzaSyCljVQnKSSnRivu9L-7l8CYnFQxctXfZtU",
+  authDomain: "ev-s-partership-fee9f.firebaseapp.com",
+  projectId: "ev-s-partership-fee9f",
+  storageBucket: "ev-s-partership-fee9f.appspot.com",
+  messagingSenderId: "834763142724",
+  appId: "1:834763142724:web:16adce2894e082a602ee11",
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);

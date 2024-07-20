@@ -2,8 +2,9 @@ import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import {useCallback} from "react";
+import {useCallback, useEffect} from "react";
 
+import {useAuth} from "../contexts/authContext.tsx";
 import {siteColors} from "../system/constants.ts";
 import SignIn from "./Auth/SignIn.tsx";
 import SignUp from "./Auth/SignUp.tsx";
@@ -15,6 +16,8 @@ function AppAppBar() {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalType, setModalType] = React.useState<null | string>(null);
+
+  const {userLoggedIn} = useAuth();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpenMenu(newOpen);
@@ -42,6 +45,12 @@ function AppAppBar() {
     },
     [modalOpen],
   );
+
+  useEffect(() => {
+    if (userLoggedIn) {
+      setModalOpen(false);
+    }
+  }, [userLoggedIn]);
 
   const formType = modalType === "sign-in" ? <SignIn /> : <SignUp />;
 

@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-import {doSignInWithEmailAndPassword} from "../../firebase/auth.js";
+import {doSignInWithEmailAndPassword} from "../../firebase/auth";
 
 export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

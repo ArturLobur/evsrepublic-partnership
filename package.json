@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@firebase/auth-types": "^0.12.2",
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.21",
     "@mui/material": "^5.15.21",
@@ -19,9 +20,11 @@
     "@tanstack/react-router": "^1.43.6",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "firebase": "^10.12.4",
+    "formik": "^2.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@tanstack/router-devtools": "^1.43.6",

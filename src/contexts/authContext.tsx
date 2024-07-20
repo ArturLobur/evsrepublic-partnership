@@ -1,17 +1,26 @@
 // import { GoogleAuthProvider } from "firebase/auth";
+import {User} from "@firebase/auth-types";
 import {onAuthStateChanged} from "firebase/auth";
 import React, {useContext, useEffect, useState} from "react";
 
 import {auth} from "../firebase/firebase";
 
-const AuthContext = React.createContext();
+interface AuthContextType {
+  userLoggedIn: boolean;
+  isEmailUser: boolean;
+  isGoogleUser: boolean;
+  currentUser: User | null;
+  setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
+}
+
+const AuthContext = React.createContext<AuthContextType | undefined>(undefined);
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
 export function AuthProvider({children}) {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [isEmailUser, setIsEmailUser] = useState(false);
   const [isGoogleUser, setIsGoogleUser] = useState(false);
@@ -22,7 +31,7 @@ export function AuthProvider({children}) {
     return unsubscribe;
   }, []);
 
-  async function initializeUser(user) {
+  async function initializeUser(user: User) {
     if (user) {
       setCurrentUser({...user});
 

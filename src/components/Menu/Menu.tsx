@@ -4,7 +4,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
+import {useAuth} from "../../contexts/authContext.tsx";
 import {menuItems} from "../../system/constants.ts";
+import UserCabinet from "../UserCabinet/UserCabinet.tsx";
 
 const logoStyle = {
   width: "75px",
@@ -20,6 +22,8 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
+  const {userLoggedIn} = useAuth();
+
   return (
     <>
       <Box
@@ -61,24 +65,30 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
           alignItems: "center",
         }}
       >
-        <Button
-          color="primary"
-          variant="text"
-          size="small"
-          name="sign-in"
-          onClick={onButtonClick}
-        >
-          Sign in
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          size="small"
-          name="sign-up"
-          onClick={onButtonClick}
-        >
-          Sign up
-        </Button>
+        {userLoggedIn ? (
+          <UserCabinet />
+        ) : (
+          <>
+            <Button
+              color="primary"
+              variant="text"
+              size="small"
+              name="sign-in"
+              onClick={onButtonClick}
+            >
+              Sign in
+            </Button>
+            <Button
+              color="primary"
+              variant="contained"
+              size="small"
+              name="sign-up"
+              onClick={onButtonClick}
+            >
+              Sign up
+            </Button>
+          </>
+        )}
       </Box>
     </>
   );
