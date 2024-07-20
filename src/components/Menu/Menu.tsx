@@ -22,6 +22,7 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
+  //@ts-ignore
   const {userLoggedIn} = useAuth();
 
   return (

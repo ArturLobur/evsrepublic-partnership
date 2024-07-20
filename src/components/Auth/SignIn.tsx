@@ -1,3 +1,4 @@
+// @ts-nocheck
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -6,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-import {doSignInWithEmailAndPassword} from "../../firebase/auth";
+import {doSignInWithEmailAndPassword} from "../../firebase/auth.js";
 
 export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

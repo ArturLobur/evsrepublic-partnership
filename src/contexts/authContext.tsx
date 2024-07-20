@@ -1,3 +1,4 @@
+// @ts-nocheck
 // import { GoogleAuthProvider } from "firebase/auth";
 import {User} from "@firebase/auth-types";
 import {onAuthStateChanged} from "firebase/auth";

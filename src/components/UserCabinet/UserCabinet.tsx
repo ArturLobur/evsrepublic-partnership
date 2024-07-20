@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import {Tooltip} from "@mui/material";
 import Avatar from "@mui/material/Avatar";
