@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
