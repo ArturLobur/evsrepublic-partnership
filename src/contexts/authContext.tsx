@@ -1,9 +1,10 @@
 // import { GoogleAuthProvider } from "firebase/auth";
 import {User} from "@firebase/auth-types";
 import {onAuthStateChanged} from "firebase/auth";
+import {doc, getDoc} from "firebase/firestore";
 import React, {useContext, useEffect, useState} from "react";
 
-import {auth} from "../firebase/firebase";
+import {auth, db} from "../firebase/firebase";
 
 interface AuthContextType {
   userLoggedIn: boolean;
@@ -29,6 +30,21 @@ export function AuthProvider({children}) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, initializeUser);
     return unsubscribe;
+  }, []);
+
+  const fetchUserData = async () => {
+    auth.onAuthStateChanged(async (user) => {
+      const docRef = doc(db, "Users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setCurrentUser(docSnap.data());
+      } else {
+        console.log("User is not logged in");
+      }
+    });
+  };
+  useEffect(() => {
+    fetchUserData();
   }, []);
 
   async function initializeUser(user: User) {

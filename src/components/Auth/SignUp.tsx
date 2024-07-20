@@ -7,13 +7,10 @@ import Typography from "@mui/material/Typography";
 import {doc, setDoc} from "firebase/firestore";
 import * as React from "react";
 
-import {useAuth} from "../../contexts/authContext.tsx";
-import {doCreateUserWithEmailAndPassword} from "../../firebase/auth";
+import {doCreateUserWithEmailAndPassword} from "../../firebase/auth.js";
 import {auth, db} from "../../firebase/firebase";
 
 export default function SignUp() {
-  const {currentUser} = useAuth();
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,6 +58,7 @@ export default function SignUp() {
       </Typography>
       <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
         <TextField
+          margin="normal"
           autoComplete="fname"
           name="firstName"
           variant="outlined"
@@ -71,6 +69,7 @@ export default function SignUp() {
           autoFocus
         />
         <TextField
+          margin="normal"
           variant="outlined"
           required
           fullWidth

@@ -6,34 +6,14 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuUI from "@mui/material/Menu";
 import Typography from "@mui/material/Typography";
-import {doc, getDoc} from "firebase/firestore";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
-import {doSignOut} from "../../firebase/auth";
-import {auth, db} from "../../firebase/firebase.ts";
+import {useAuth} from "../../contexts/authContext.tsx";
+import {doSignOut} from "../../firebase/auth.js";
 
 const UserCabinet = () => {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const [userDetails, setUserDetails] = useState(null);
-  const fetchUserData = async () => {
-    auth.onAuthStateChanged(async (user) => {
-      console.log(user);
-
-      const docRef = doc(db, "Users", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setUserDetails(docSnap.data());
-        console.log(docSnap.data());
-      } else {
-        console.log("User is not logged in");
-      }
-    });
-  };
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  console.log("userDetails", userDetails);
+  const {currentUser} = useAuth();
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -45,7 +25,7 @@ const UserCabinet = () => {
 
   return (
     <Box sx={{flexGrow: 0}}>
-      <Tooltip title="Open settings">
+      <Tooltip title="Profile">
         <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
           <Avatar>
             <AccountCircleOutlinedIcon />
@@ -69,13 +49,13 @@ const UserCabinet = () => {
         onClose={handleCloseUserMenu}
       >
         <Box display="flex" flexDirection="column" gap={2} p={2}>
-          {userDetails?.firstName && (
+          {currentUser?.firstName && (
             <Typography>
-              {userDetails.firstName} {userDetails.lastName}
+              {currentUser.firstName} {currentUser.lastName}
             </Typography>
           )}
           <Typography fontSize={12} marginTop="-15px">
-            ({userDetails?.email})
+            ({currentUser?.email})
           </Typography>
           <Button
             sx={{mt: 1}}
