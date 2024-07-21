@@ -5,11 +5,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import {doc, setDoc} from "firebase/firestore";
 import * as React from "react";
-
-import {doCreateUserWithEmailAndPassword} from "../../firebase/auth.js";
-import {auth, db} from "../../firebase/firebase";
 
 export default function SignUp() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,27 +16,6 @@ export default function SignUp() {
     const lastName = data.get("lastName") as string;
     const email = data.get("email") as string;
     const password = data.get("password") as string;
-    try {
-      // Create user with email and password
-      await doCreateUserWithEmailAndPassword(
-        firstName,
-        lastName,
-        email,
-        password,
-      );
-      const user = auth.currentUser;
-      console.log("user", user);
-      if (user) {
-        await setDoc(doc(db, "Users", user.uid), {
-          email: user.email,
-          firstName: firstName,
-          lastName: lastName,
-          photo: "",
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   return (
