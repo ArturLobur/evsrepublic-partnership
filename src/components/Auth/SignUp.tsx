@@ -7,18 +7,14 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-export default function SignUp() {
+import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
+
+export default function SignUp({onClose}) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    fetch(
-      "https://script.google.com/macros/s/AKfycbyO5ehQNOTbe4tCBe1bRjuWiNJuF6RqNszJtHFIejmRGTzhl_JFJTTvmxphSEEwaTteNg/exec",
-      {
-        method: "POST",
-        body: data,
-      },
-    );
+    await sendDataToGoogleDoc(data).then(() => onClose());
   };
 
   return (

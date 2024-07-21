@@ -9,19 +9,13 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
+import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 export default function Hero() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
-    fetch(
-      "https://script.google.com/macros/s/AKfycbyO5ehQNOTbe4tCBe1bRjuWiNJuF6RqNszJtHFIejmRGTzhl_JFJTTvmxphSEEwaTteNg/exec",
-      {
-        method: "POST",
-        body: data,
-      },
-    );
+    sendDataToGoogleDoc(data).then(() => event.target.reset());
   };
 
   return (

@@ -44,7 +44,12 @@ function AppAppBar() {
     [modalOpen],
   );
 
-  const formType = modalType === "sign-in" ? <SignIn /> : <SignUp />;
+  const formType =
+    modalType === "sign-in" ? (
+      <SignIn onClose={() => setModalOpen(false)} />
+    ) : (
+      <SignUp onClose={() => setModalOpen(false)} />
+    );
 
   return (
     <AppBar
