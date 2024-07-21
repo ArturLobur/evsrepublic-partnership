@@ -15,7 +15,7 @@ export default function SignUp() {
     const firstName = data.get("firstName") as string;
     const lastName = data.get("lastName") as string;
     const email = data.get("email") as string;
-    const password = data.get("password") as string;
+    const telephone = data.get("telephone") as string;
   };
 
   return (
@@ -32,7 +32,7 @@ export default function SignUp() {
       <Typography component="h1" variant="h5">
         Sign up
       </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
+      <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
         <TextField
           margin="normal"
           autoComplete="given-name"
@@ -67,16 +67,12 @@ export default function SignUp() {
           margin="normal"
           required
           fullWidth
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-          autoComplete="current-password"
+          name="telephone"
+          label="Telephone"
+          type="tel"
+          id="tel"
+          autoComplete="tel"
         />
-        {/*<FormControlLabel*/}
-        {/*  control={<Checkbox value="remember" color="primary" />}*/}
-        {/*  label="Remember me"*/}
-        {/*/>*/}
         <Button type="submit" fullWidth variant="contained" sx={{mt: 3, mb: 2}}>
           Sign Up
         </Button>

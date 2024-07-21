@@ -72,15 +72,16 @@ export default function Hero() {
             sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
           >
             <TextField
-              id="outlined-basic"
               hiddenLabel
               size="small"
               variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
+              aria-label="Enter your phone number"
+              placeholder="Your phone number"
+              type="tel"
+              id="tel"
+              autoComplete="tel"
               inputProps={{
-                autoComplete: "off",
-                "aria-label": "Enter your email address",
+                "aria-label": "Enter your phone number",
               }}
             />
             <Button variant="contained" color="primary">
@@ -89,7 +90,7 @@ export default function Hero() {
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{opacity: 0.8}}>
             By clicking &quot;Start now&quot; you agree to our&nbsp;
-            <Link href="#" color="primary">
+            <Link color="primary" sx={{textDecoration: "none"}}>
               Terms & Conditions
             </Link>
             .
