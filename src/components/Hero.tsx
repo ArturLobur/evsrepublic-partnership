@@ -6,10 +6,24 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
 
 export default function Hero() {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyO5ehQNOTbe4tCBe1bRjuWiNJuF6RqNszJtHFIejmRGTzhl_JFJTTvmxphSEEwaTteNg/exec",
+      {
+        method: "POST",
+        body: data,
+      },
+    );
+  };
+
   return (
     <Box
       id="hero"
@@ -65,6 +79,8 @@ export default function Hero() {
             top-tier features and services.
           </Typography>
           <Stack
+            component="form"
+            onSubmit={handleSubmit}
             direction={{xs: "column", sm: "row"}}
             alignSelf="center"
             spacing={1}
@@ -80,11 +96,12 @@ export default function Hero() {
               type="tel"
               id="tel"
               autoComplete="tel"
+              name="Telephone"
               inputProps={{
                 "aria-label": "Enter your phone number",
               }}
             />
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" type="submit">
               Start now
             </Button>
           </Stack>

@@ -11,11 +11,14 @@ export default function SignUp() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // Extract user information
-    const firstName = data.get("firstName") as string;
-    const lastName = data.get("lastName") as string;
-    const email = data.get("email") as string;
-    const telephone = data.get("telephone") as string;
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyO5ehQNOTbe4tCBe1bRjuWiNJuF6RqNszJtHFIejmRGTzhl_JFJTTvmxphSEEwaTteNg/exec",
+      {
+        method: "POST",
+        body: data,
+      },
+    );
   };
 
   return (
@@ -36,7 +39,7 @@ export default function SignUp() {
         <TextField
           margin="normal"
           autoComplete="given-name"
-          name="firstName"
+          name="FirstName"
           variant="outlined"
           required
           fullWidth
@@ -51,7 +54,7 @@ export default function SignUp() {
           fullWidth
           id="lastName"
           label="Last Name"
-          name="lastName"
+          name="LastName"
           autoComplete="family-name"
         />
         <TextField
@@ -60,14 +63,14 @@ export default function SignUp() {
           fullWidth
           id="email"
           label="Email Address"
-          name="email"
+          name="Email"
           autoComplete="email"
         />
         <TextField
           margin="normal"
           required
           fullWidth
-          name="telephone"
+          name="Telephone"
           label="Telephone"
           type="tel"
           id="tel"
