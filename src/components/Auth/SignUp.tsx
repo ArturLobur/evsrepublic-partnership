@@ -67,7 +67,7 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           required
           fullWidth
           name="Telephone"
-          label="Telephone"
+          label="Phone"
           type="tel"
           id="tel"
           autoComplete="tel"
