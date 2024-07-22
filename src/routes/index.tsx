@@ -5,11 +5,11 @@ import Divider from "@mui/material/Divider";
 import {ThemeProvider} from "@mui/material/styles";
 import {createFileRoute} from "@tanstack/react-router";
 
+import About from "../components/About.tsx";
 import AppAppBar from "../components/AppAppBar.tsx";
 import FAQ from "../components/FAQ.tsx";
 import Features from "../components/Features.tsx";
 import Footer from "../components/Footer.tsx";
-import Hero from "../components/Hero.tsx";
 import Highlights from "../components/Highlights.tsx";
 import LogoCollection from "../components/LogoCollection.tsx";
 import Pricing from "../components/Pricing.tsx";
@@ -34,7 +34,7 @@ function LandingPage() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppAppBar />
-      <Hero />
+      <About />
       <Box>
         <LogoCollection />
         <Features />

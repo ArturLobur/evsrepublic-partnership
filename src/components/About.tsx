@@ -11,7 +11,7 @@ import * as React from "react";
 import {siteColors} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
-export default function Hero() {
+export default function About() {
   const [formValue, setFormValue] = React.useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -55,7 +55,7 @@ export default function Hero() {
           pb: {xs: 8, sm: 12},
         }}
       >
-        <Stack spacing={2} useFlexGap sx={{width: {xs: "100%", sm: "70%"}}}>
+        <Stack spacing={2} useFlexGap sx={{width: {xs: "100%", sm: "80%"}}}>
           <Typography
             variant="h1"
             sx={{
@@ -66,7 +66,7 @@ export default function Hero() {
               fontSize: "clamp(3.5rem, 10vw, 4rem)",
             }}
           >
-            Our latest&nbsp;
+            Welcome to&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -78,17 +78,37 @@ export default function Hero() {
                     : "primary.light",
               }}
             >
-              products
+              EV'SREPUBLIC's
             </Typography>
+          </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: "clamp(3.5rem, 8vw, 4rem)",
+              textAlign: "center",
+              mt: -2,
+            }}
+          >
+            Partnership Program
           </Typography>
           <Typography
             textAlign="center"
             color="text.secondary"
             sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
           >
-            Explore our cutting-edge dashboard, delivering high-quality
-            solutions tailored to your needs. Elevate your experience with
-            top-tier features and services.
+            Transform Your Auto Service Business to Serve Electric Vehicles
+          </Typography>
+          <Typography
+            textAlign="center"
+            sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
+          >
+            At EVSREPUBLIC.com, we are excited to introduce a unique partnership
+            opportunity for auto service shop owners. This project will be
+            unveiled at the Electric Vehicles Exhibition, where owners of
+            conventional auto repair shops (servicing vehicles with internal
+            combustion engines) will be present. Our mission is to enable these
+            shops to transition smoothly into servicing electric vehicles (EVs),
+            opening new revenue streams and enhancing their service offerings.
           </Typography>
           <Stack
             component="form"
