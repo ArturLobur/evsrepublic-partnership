@@ -6,12 +6,10 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-export default function SignIn({onClose}: {onClose: () => void}) {
+export default function SignIn() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // const data = new FormData(event.currentTarget);
-
-    onClose();
   };
 
   return (
