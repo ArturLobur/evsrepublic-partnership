@@ -7,6 +7,7 @@ import {createFileRoute} from "@tanstack/react-router";
 
 import About from "../components/About.tsx";
 import AppAppBar from "../components/AppAppBar.tsx";
+import CoursesAndCertifications from "../components/CoursesAndCertifications.tsx";
 import Footer from "../components/Footer.tsx";
 import KeyFeatures from "../components/KeyFeatures.tsx";
 import LogoCollection from "../components/LogoCollection.tsx";
@@ -34,13 +35,14 @@ function LandingPage() {
       <AppAppBar />
       <About />
       <Box>
-        <LogoCollection />
+        {/*<LogoCollection />*/}
         <Marketing />
         <Divider />
         <KeyFeatures />
         <Divider />
-        <Divider />
         <Service />
+        <Divider />
+        <CoursesAndCertifications />
         <Footer />
       </Box>
     </ThemeProvider>

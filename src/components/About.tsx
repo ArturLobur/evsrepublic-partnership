@@ -38,7 +38,7 @@ export default function About() {
 
   return (
     <Box
-      id="hero"
+      id="about"
       sx={{
         width: "100%",
         backgroundImage: `linear-gradient(${siteColors.darkGrey}, ${alpha("#090E10", 0.0)})`,
