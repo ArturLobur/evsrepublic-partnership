@@ -15,7 +15,8 @@ export default function Hero() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    sendDataToGoogleDoc(data).then(() => event.target.reset());
+    await sendDataToGoogleDoc(data);
+    (event.target as HTMLFormElement).reset();
   };
 
   return (

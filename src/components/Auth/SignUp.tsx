@@ -15,6 +15,7 @@ export default function SignUp({onClose}) {
     const data = new FormData(event.currentTarget);
 
     await sendDataToGoogleDoc(data).then(() => onClose());
+    (event.target as HTMLFormElement).reset();
   };
 
   return (
