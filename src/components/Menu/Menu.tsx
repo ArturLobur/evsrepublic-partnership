@@ -4,10 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
+import logo from "../../assets/svg/logo.svg";
 import {menuItems} from "../../system/constants.ts";
 
 const logoStyle = {
-  width: "75px",
+  width: "175px",
   height: "auto",
   cursor: "pointer",
   marginLeft: "24px",
@@ -34,9 +35,7 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
         <img
           id="logo"
           onClick={() => scrollToSection("logo")}
-          src={
-            "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
-          }
+          src={logo}
           style={logoStyle}
           alt="logo"
         />

@@ -7,11 +7,12 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
+import logo from "../assets/svg/logo.svg";
 import {menuItems} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 const logoStyle = {
-  width: "95px",
+  width: "175px",
   height: "auto",
   marginLeft: 16,
 };
@@ -83,13 +84,7 @@ export default function Footer() {
         >
           <Box sx={{width: {xs: "100%", sm: "60%"}}}>
             <Box sx={{ml: "-15px"}}>
-              <img
-                src={
-                  "https://cdn.prod.website-files.com/62a6eccb7f5d4d6907ac92e9/62a716addbf8bc00a54852f8_evs-logo.svg"
-                }
-                style={logoStyle}
-                alt="logo of footer"
-              />
+              <img src={logo} style={logoStyle} alt="logo of footer" />
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
               Newsletter
