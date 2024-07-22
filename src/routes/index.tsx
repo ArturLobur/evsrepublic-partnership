@@ -7,13 +7,11 @@ import {createFileRoute} from "@tanstack/react-router";
 
 import About from "../components/About.tsx";
 import AppAppBar from "../components/AppAppBar.tsx";
-import FAQ from "../components/FAQ.tsx";
-import Features from "../components/Features.tsx";
 import Footer from "../components/Footer.tsx";
-import Highlights from "../components/Highlights.tsx";
+import KeyFeatures from "../components/KeyFeatures.tsx";
 import LogoCollection from "../components/LogoCollection.tsx";
-import Pricing from "../components/Pricing.tsx";
-import Testimonials from "../components/Testimonials.tsx";
+import Marketing from "../components/Marketing.tsx";
+import Service from "../components/Service.tsx";
 import {siteColors} from "../system/constants.ts";
 
 export const Route = createFileRoute("/")({
@@ -37,16 +35,12 @@ function LandingPage() {
       <About />
       <Box>
         <LogoCollection />
-        <Features />
+        <Marketing />
         <Divider />
-        <Testimonials />
+        <KeyFeatures />
         <Divider />
-        <Highlights />
         <Divider />
-        <Pricing />
-        <Divider />
-        <FAQ />
-        <Divider />
+        <Service />
         <Footer />
       </Box>
     </ThemeProvider>
