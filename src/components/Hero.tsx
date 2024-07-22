@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
-import {FormDataI, sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
+import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 export default function Hero() {
   const [formValue, setFormValue] = React.useState("");
@@ -17,9 +17,22 @@ export default function Hero() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (formValue !== "") {
-      const data: FormDataI = new FormData(event.currentTarget);
+      const data = new FormData();
+      data.append("Telephone", formValue);
+
       await sendDataToGoogleDoc(data);
       setFormValue("");
+    }
+  };
+
+  const handleTelephoneChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const value = event.target.value;
+    // Allow only numbers, +, -, and spaces in the input
+    const regex = /^[0-9+\- ]*$/;
+    if (regex.test(value)) {
+      setFormValue(value);
     }
   };
 
@@ -88,18 +101,21 @@ export default function Hero() {
           >
             <TextField
               hiddenLabel
+              required
               size="small"
               variant="outlined"
               aria-label="Enter your phone number"
               placeholder="Your phone number"
               type="tel"
-              id="tel"
+              id="Telephone"
               autoComplete="tel"
               name="Telephone"
               value={formValue}
-              onChange={(event) => setFormValue(event.target.value)}
+              onChange={(e) => handleTelephoneChange(e)}
               inputProps={{
                 "aria-label": "Enter your phone number",
+                minLength: 10,
+                maxLength: 15,
               }}
             />
             <Button variant="contained" color="primary" type="submit">

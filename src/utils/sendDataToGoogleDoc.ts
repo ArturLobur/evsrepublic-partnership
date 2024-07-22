@@ -1,13 +1,6 @@
 import toast from "react-hot-toast";
 
-export interface FormDataI {
-  FirstName?: string;
-  LastName?: string;
-  Email?: string;
-  Telephone: string;
-}
-
-export async function sendDataToGoogleDoc(data: FormDataI) {
+export async function sendDataToGoogleDoc(data: FormData) {
   fetch(
     "https://script.google.com/macros/s/AKfycbyO5ehQNOTbe4tCBe1bRjuWiNJuF6RqNszJtHFIejmRGTzhl_JFJTTvmxphSEEwaTteNg/exec",
     {
