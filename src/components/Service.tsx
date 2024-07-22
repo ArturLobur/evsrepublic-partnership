@@ -37,12 +37,15 @@ export default function Service() {
             Service:
           </Typography>
           <Stack
-            direction="row"
             justifyContent="center"
             alignItems="flex-start"
             spacing={2}
             useFlexGap
-            sx={{width: "100%", display: "flex"}}
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: {xs: "column", md: "row"},
+            }}
           >
             {items.map(({title, description}, index) => (
               <Card
