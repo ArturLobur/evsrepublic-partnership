@@ -1,4 +1,3 @@
-// @ts-nocheck
 import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -9,7 +8,7 @@ import * as React from "react";
 
 import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
 
-export default function SignUp({onClose}) {
+export default function SignUp({onClose}: {onClose: () => void}) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -7,10 +6,12 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-export default function SignIn() {
+export default function SignIn({onClose}: {onClose: () => void}) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    // const data = new FormData(event.currentTarget);
+
+    onClose();
   };
 
   return (
