@@ -2,13 +2,17 @@ import AutoFixHighRoundedIcon from "@mui/icons-material/AutoFixHighRounded";
 import DiagnosticToolRoundedIcon from "@mui/icons-material/BuildCircleRounded";
 import ConstructionRoundedIcon from "@mui/icons-material/ConstructionRounded";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 import teslalabortime from "../assets/teslalabortime.png";
+import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 const teslalabortimeStyle = {
   width: "100%",
@@ -88,6 +92,29 @@ const howItWorks = [
 ];
 
 export default function LaborTimes() {
+  const [formValue, setFormValue] = React.useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (formValue !== "") {
+      const data = new FormData();
+      data.append("Telephone", formValue);
+
+      await sendDataToGoogleDoc(data);
+      setFormValue("");
+    }
+  };
+
+  const handleTelephoneChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const value = event.target.value;
+    // Allow only numbers, +, -, and spaces in the input
+    const regex = /^[0-9+\- ]*$/;
+    if (regex.test(value)) {
+      setFormValue(value);
+    }
+  };
   return (
     <Box
       id="laborTimes"
@@ -325,6 +352,56 @@ export default function LaborTimes() {
                 </Box>
               </Card>
             ))}
+          </Stack>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: {sm: "100%", md: "80%"},
+            textAlign: {sm: "left", md: "center"},
+          }}
+        >
+          <Typography component="h2" variant="h4" sx={{mb: 3}}>
+            Get Started Today
+          </Typography>
+          <Typography textAlign="center" sx={{mb: 2}}>
+            Join our partnership program to gain access to Tesla Labor Times and
+            transform your auto service business. Enhance your repair
+            efficiency, improve customer satisfaction, and stay competitive in
+            the growing EV market.
+          </Typography>
+          <Stack
+            component="form"
+            onSubmit={handleSubmit}
+            direction={{xs: "column", sm: "row"}}
+            alignSelf="center"
+            spacing={1}
+            useFlexGap
+            sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
+          >
+            <TextField
+              hiddenLabel
+              required
+              size="small"
+              variant="outlined"
+              aria-label="Enter your phone number"
+              placeholder="Your phone number"
+              type="tel"
+              id="Telephone"
+              autoComplete="tel"
+              name="Telephone"
+              value={formValue}
+              onChange={(e) => handleTelephoneChange(e)}
+              inputProps={{
+                "aria-label": "Enter your phone number",
+                minLength: 10,
+                maxLength: 15,
+              }}
+            />
+            <Button variant="contained" color="primary" type="submit">
+              Register Now and Gain Access!
+            </Button>
           </Stack>
         </Box>
       </Container>
