@@ -9,14 +9,18 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {siteColors} from "../system/constants.ts";
-import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
+import {FormDataI, sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 export default function Hero() {
+  const [formValue, setFormValue] = React.useState("");
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    await sendDataToGoogleDoc(data);
-    (event.target as HTMLFormElement).reset();
+    if (formValue !== "") {
+      const data: FormDataI = new FormData(event.currentTarget);
+      await sendDataToGoogleDoc(data);
+      setFormValue("");
+    }
   };
 
   return (
@@ -92,6 +96,8 @@ export default function Hero() {
               id="tel"
               autoComplete="tel"
               name="Telephone"
+              value={formValue}
+              onChange={(event) => setFormValue(event.target.value)}
               inputProps={{
                 "aria-label": "Enter your phone number",
               }}
