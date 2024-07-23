@@ -32,7 +32,7 @@ export default function SignIn() {
           required
           fullWidth
           id="email"
-          label="Email Address"
+          label="Shop's ID"
           name="email"
           autoComplete="email"
           autoFocus

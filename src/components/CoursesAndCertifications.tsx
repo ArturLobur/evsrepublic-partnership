@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 const items = [
   {
@@ -53,8 +54,19 @@ export default function CoursesAndCertifications() {
             textAlign: {sm: "left", md: "center"},
           }}
         >
-          <Typography component="h2" variant="h4">
-            Courses and Certifications Offered:
+          <Typography
+            textAlign="center"
+            variant="h1"
+            sx={{
+              mb: 6,
+              fontSize: "clamp(3rem, 10vw, 4rem)",
+              color: (theme) =>
+                theme.palette.mode === "light"
+                  ? "primary.main"
+                  : "primary.light",
+            }}
+          >
+            Education & Certificates
           </Typography>
         </Box>
         <Grid

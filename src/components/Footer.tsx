@@ -86,12 +86,7 @@ export default function Footer() {
             <Box sx={{ml: "-15px"}}>
               <img src={logo} style={logoStyle} alt="logo of footer" />
             </Box>
-            <Typography variant="body2" fontWeight={600} gutterBottom>
-              Newsletter
-            </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe to our newsletter for weekly updates and promotions.
-            </Typography>
+
             <Stack
               direction="row"
               component="form"

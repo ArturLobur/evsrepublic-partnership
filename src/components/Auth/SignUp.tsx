@@ -29,7 +29,7 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         <PersonAddOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Sign up
+        Sign up as a new partner
       </Typography>
       <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
         <TextField

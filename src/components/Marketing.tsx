@@ -6,27 +6,24 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 const items = [
   {
-    title: "Franchise-like Support:",
+    title: "Premium Partners:",
     description:
-      "Premium partners receive extensive marketing support, almost equivalent to franchising.\n" +
+      "Frachise-like Support. Premium partners receive extensive marketing support, almost equivalent to franchising.\n" +
       "Direct Client Flow: Enjoy a steady stream of clients directed from our website, ensuring increased business opportunities.\n" +
-      "Featured Listing: Your business will be prominently featured and promoted across our platforms.\n" +
-      "Standard Partners:\n" +
-      "Online Listing: Your business will be listed on our website, providing visibility to potential customers.\n" +
-      "Basic Marketing Support: Access to basic marketing resources to help boost your online presence.\n",
+      "Featured Listing: Your business will be prominently featured and promoted across our platforms.\n",
   },
   {
-    title: "Increased Visibility:",
+    title: "Standard  Partners:",
     description:
+      "Online Listing. Your business will be listed on our website, providing visibility to potential customers.\n" +
+      "Basic Marketing Support: Access to basic marketing resources to help boost your online presence.\n" +
       "Stand out in the crowded market with our targeted marketing campaigns.\n" +
       "Customer Acquisition: Attract a broader customer base interested in EV maintenance and repairs.\n" +
-      "Enhanced Reputation: Leverage our brand’s credibility to build trust with new and existing clients.\n" +
-      "Labor Times\n" +
-      "Optimize Your Service Efficiency with Tesla Labor Times\n" +
-      "One of the standout features of our partnership is access to the Tesla Labor Times project. This resource provides accurate and detailed repair times for various Tesla components, ensuring that your service operations are efficient and reliable.",
+      "Enhanced Reputation: Leverage our brand’s credibility to build trust with new and existing clients.\n",
   },
 ];
 
@@ -36,6 +33,20 @@ export default function Marketing() {
       <Grid container>
         <Grid item>
           <div>
+            <Typography
+              textAlign="center"
+              variant="h1"
+              sx={{
+                mb: 6,
+                fontSize: "clamp(3rem, 10vw, 4rem)",
+                color: (theme) =>
+                  theme.palette.mode === "light"
+                    ? "primary.main"
+                    : "primary.light",
+              }}
+            >
+              Marketing
+            </Typography>
             <Typography component="h2" variant="h4" color="text.primary">
               Elevate Your Business with Comprehensive Marketing Support
             </Typography>
@@ -46,7 +57,7 @@ export default function Marketing() {
             >
               We understand the importance of visibility and customer
               acquisition in the competitive auto service industry. As part of
-              our partnership program, EVSREPUBLIC.com offers two levels of
+              our partnership program, EV's Republic offers two levels of
               partnership: Premium and Standard (Registered Partner).
             </Typography>
           </div>

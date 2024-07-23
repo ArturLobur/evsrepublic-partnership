@@ -66,7 +66,7 @@ export default function About() {
               fontSize: "clamp(3.5rem, 10vw, 4rem)",
             }}
           >
-            Welcome to&nbsp;
+            Become our partner in&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -78,36 +78,25 @@ export default function About() {
                     : "primary.light",
               }}
             >
-              EV'SREPUBLIC's
+              EV repair
             </Typography>
           </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: "clamp(3.5rem, 8vw, 4rem)",
-              textAlign: "center",
-              mt: -2,
-            }}
-          >
-            Partnership Program
-          </Typography>
+
           <Typography
             textAlign="center"
             color="text.secondary"
             sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
           >
-            Transform Your Auto Service Business to Serve Electric Vehicles
+            Upgrade your existing auto repair shop by integrating EV repair
+            services with our comprehensive solutions
           </Typography>
           <Typography
             textAlign="center"
             sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
           >
-            At EVSREPUBLIC.com, we are excited to introduce a unique partnership
-            opportunity for auto service shop owners. This project will be
-            unveiled at the Electric Vehicles Exhibition, where owners of
-            conventional auto repair shops (servicing vehicles with internal
-            combustion engines) will be present. Our mission is to enable these
-            shops to transition smoothly into servicing electric vehicles (EVs),
+            At EV's Republic, we are excited to introduce a unique partnership
+            opportunity for auto service shop owners. Our mission is to enable
+            these shops to transition smoothly into servicing electric vehicles,
             opening new revenue streams and enhancing their service offerings.
           </Typography>
           <Stack
@@ -143,11 +132,8 @@ export default function About() {
             </Button>
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{opacity: 0.8}}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
-            <Link color="primary" sx={{textDecoration: "none"}}>
-              Terms & Conditions
-            </Link>
-            .
+            By clicking &quot;Start now&quot; you agree to our&nbsp; Terms &
+            Conditions .
           </Typography>
         </Stack>
       </Container>

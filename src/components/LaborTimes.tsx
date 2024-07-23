@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -140,21 +141,39 @@ export default function LaborTimes() {
             textAlign: {sm: "left", md: "center"},
           }}
         >
-          <Typography component="h2" variant="h4">
-            Optimize Your Service Efficiency with&nbsp;
-            <Typography
-              component="span"
-              variant="h4"
-              sx={{
-                color: (theme) =>
-                  theme.palette.mode === "light"
-                    ? "primary.main"
-                    : "primary.light",
-              }}
-            >
-              Tesla Labor Times
-            </Typography>
+          <Typography
+            textAlign="center"
+            variant="h1"
+            sx={{
+              mb: 6,
+              fontSize: "clamp(3rem, 10vw, 4rem)",
+              color: (theme) =>
+                theme.palette.mode === "light"
+                  ? "primary.main"
+                  : "primary.light",
+            }}
+          >
+            Tesla Labor Times
           </Typography>
+
+          <Typography component="h2" variant="h4">
+            Optimize Your Service Efficiency with our project&nbsp;
+            <Link href="https://teslalabortime.online/">
+              <Typography
+                component="span"
+                variant="h4"
+                sx={{
+                  color: (theme) =>
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
+                }}
+              >
+                teslalabortime.online
+              </Typography>
+            </Link>
+          </Typography>
+
           <Typography
             variant="body1"
             textAlign="center"
@@ -165,26 +184,6 @@ export default function LaborTimes() {
             Tesla Labor Times project. This resource provides accurate and
             detailed repair times for various Tesla components, ensuring that
             your service operations are efficient and reliable.
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            mt: 2,
-            width: "100%",
-          }}
-        >
-          <Typography component="h2" variant="h4">
-            What is Tesla Labor Times?
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{mb: {xs: 2, sm: 4}}}
-          >
-            Tesla Labor Times is a comprehensive database that offers precise
-            repair times for different Tesla models and their components. This
-            tool is essential for any auto service shop looking to streamline
-            its repair processes and provide accurate estimates to customers.
           </Typography>
         </Box>
         <Box
@@ -269,96 +268,14 @@ export default function LaborTimes() {
             </Grid>
           ))}
         </Grid>
-        <Box
-          sx={{
-            width: {sm: "100%", md: "60%"},
-            textAlign: {sm: "left", md: "center"},
-          }}
-        >
-          <Typography component="h2" variant="h4">
-            Key Features:
-          </Typography>
-        </Box>
         <img
           style={teslalabortimeStyle}
           src={teslalabortime}
           alt="teslalabortime"
         />
-        <Typography
-          variant="body1"
-          textAlign="center"
-          color="text.secondary"
-          sx={{mb: {xs: 2, sm: 4}}}
-        >
-          The screenshot above illustrates the user-friendly interface of the
-          Tesla Labor Times tool. You can see how repair times are broken down
-          by specific components and models, making it easy to access the
-          information you need.
-        </Typography>
         <Box
           sx={{
             width: {sm: "100%", md: "60%"},
-            textAlign: {sm: "left", md: "center"},
-          }}
-        >
-          <Typography component="h2" variant="h4">
-            How It Works:
-          </Typography>
-          <Stack
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
-            spacing={2}
-            useFlexGap
-            sx={{width: "100%", display: "flex"}}
-          >
-            {howItWorks.map(({title, description}, index) => (
-              <Card
-                key={index}
-                variant="outlined"
-                sx={{
-                  p: 2,
-                  height: "fit-content",
-                  width: "100%",
-                  background: "none",
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    textAlign: "left",
-                    flexDirection: {xs: "column", md: "row"},
-                    alignItems: {md: "center"},
-                    gap: 2.5,
-                  }}
-                >
-                  <Box sx={{textTransform: "none"}}>
-                    <Typography
-                      color="text.primary"
-                      variant="body2"
-                      fontWeight="bold"
-                    >
-                      {title}
-                    </Typography>
-                    <Typography
-                      color="text.secondary"
-                      variant="body2"
-                      sx={{my: 0.5}}
-                    >
-                      {description}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Card>
-            ))}
-          </Stack>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: {sm: "100%", md: "80%"},
             textAlign: {sm: "left", md: "center"},
           }}
         >
@@ -375,10 +292,14 @@ export default function LaborTimes() {
             component="form"
             onSubmit={handleSubmit}
             direction={{xs: "column", sm: "row"}}
-            alignSelf="center"
             spacing={1}
             useFlexGap
-            sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              pt: 2,
+              width: {xs: "100%", sm: "auto"},
+            }}
           >
             <TextField
               hiddenLabel
