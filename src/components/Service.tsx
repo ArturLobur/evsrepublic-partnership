@@ -53,6 +53,7 @@ export default function Service() {
             textAlign="center"
             variant="h1"
             sx={{
+              mt: -2,
               mb: 6,
               fontSize: "clamp(3rem, 10vw, 4rem)",
               color: (theme) =>
