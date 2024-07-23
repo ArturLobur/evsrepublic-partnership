@@ -10,6 +10,7 @@ import AppAppBar from "../components/AppAppBar.tsx";
 import CoursesAndCertifications from "../components/CoursesAndCertifications.tsx";
 import Footer from "../components/Footer.tsx";
 import LaborTimes from "../components/LaborTimes.tsx";
+import LogoCollection from "../components/LogoCollection.tsx";
 import Marketing from "../components/Marketing.tsx";
 import Service from "../components/Service.tsx";
 import {siteColors} from "../system/constants.ts";
@@ -34,7 +35,7 @@ function LandingPage() {
       <AppAppBar />
       <About />
       <Box>
-        {/*<LogoCollection />*/}
+        <LogoCollection />
         <Marketing />
         <Divider />
         <LaborTimes />
