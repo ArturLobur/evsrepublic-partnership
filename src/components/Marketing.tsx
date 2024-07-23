@@ -6,6 +6,10 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import {useState} from "react";
+
+import SignUp from "./Auth/SignUp.tsx";
+import ModalWindow from "./ModalWindow.tsx";
 
 const items = [
   {
@@ -27,6 +31,12 @@ const items = [
 ];
 
 export default function Marketing() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
   return (
     <Container id="marketing" sx={{py: {xs: 8, sm: 16}}}>
       <Grid container>
@@ -109,6 +119,7 @@ export default function Marketing() {
                       variant="body2"
                       fontWeight="bold"
                       sx={{
+                        cursor: "pointer",
                         display: "inline-flex",
                         alignItems: "center",
                         "& > svg": {transition: "0.2s"},
@@ -116,6 +127,7 @@ export default function Marketing() {
                       }}
                       onClick={(event) => {
                         event.stopPropagation();
+                        handleModalOpen();
                       }}
                     >
                       <span>Learn more</span>
@@ -131,6 +143,9 @@ export default function Marketing() {
           </Stack>
         </Grid>
       </Grid>
+      <ModalWindow onOpen={modalOpen} onClose={() => setModalOpen(!modalOpen)}>
+        <SignUp onClose={() => setModalOpen(false)} />
+      </ModalWindow>
     </Container>
   );
 }
