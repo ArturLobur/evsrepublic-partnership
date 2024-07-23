@@ -69,29 +69,6 @@ const benefitsItems = [
   },
 ];
 
-const howItWorks = [
-  {
-    title: "1. Log In:",
-    description:
-      "Access the Tesla Labor Times platform through your EVSREPUBLIC account.",
-  },
-  {
-    title: "2. Search:",
-    description:
-      "Enter the model and component details to find the relevant repair times.",
-  },
-  {
-    title: "3. View Data:",
-    description:
-      "Browse the detailed breakdown of labor times for various repairs.",
-  },
-  {
-    title: "4. Plan Repairs: ",
-    description:
-      "Use the data to schedule and manage your repair tasks efficiently.",
-  },
-];
-
 export default function LaborTimes() {
   const [formValue, setFormValue] = React.useState("");
 
