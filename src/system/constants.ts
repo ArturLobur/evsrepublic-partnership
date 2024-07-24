@@ -8,8 +8,9 @@ export const siteColors = {
 };
 
 export const menuItems = [
-  {name: "marketing", label: "Marketing"},
   {name: "laborTimes", label: "Labor Times"},
   {name: "service", label: "Remote Services"},
   {name: "coursesAndCertifications", label: "Education & Certificates"},
+
+  {name: "marketing", label: "Marketing"},
 ];

@@ -68,6 +68,23 @@ const items = [
       },
     ],
   },
+
+  {
+    icon: <AutoFixHighRoundedIcon />,
+    title: "Tesla Drive Unit Maintenance and Repair\n",
+    description: [
+      {
+        list: "Overview: Acquire specialized knowledge on the maintenance and repair of Tesla drive units.",
+      },
+      {
+        list: "Key Topics: Drive unit components, common issues, troubleshooting techniques, and repair protocols.",
+      },
+      {
+        list: "Outcome: Participants will be capable of diagnosing and repairing Tesla drive units, ensuring optimal performance and longevity.",
+      },
+    ],
+  },
+
   {
     icon: <AutoFixHighRoundedIcon />,
     title: "EV Safety Protocols",

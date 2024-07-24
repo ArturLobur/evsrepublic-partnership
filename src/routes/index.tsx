@@ -35,13 +35,15 @@ function LandingPage() {
       <About />
       <Box>
         {/*  <LogoCollection />*/}
-        <Marketing />
+
         <Divider />
         <LaborTimes />
         <Divider />
         <Service />
         <Divider />
         <CoursesAndCertifications />
+
+        <Marketing />
         <Footer />
       </Box>
     </ThemeProvider>

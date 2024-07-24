@@ -132,7 +132,7 @@ export default function About() {
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{opacity: 0.8}}>
             By clicking &quot;Start now&quot; you agree to our&nbsp; Terms &
-            Conditions .
+            Conditions
           </Typography>
         </Stack>
       </Container>
