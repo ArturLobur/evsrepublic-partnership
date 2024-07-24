@@ -112,38 +112,33 @@ export default function LaborTimes() {
           gap: {xs: 3, sm: 6},
         }}
       >
-        <Box
-          sx={{
-            width: {sm: "100%", md: "60%"},
-            textAlign: {sm: "left", md: "center"},
-          }}
-        >
+        <Stack spacing={2} useFlexGap sx={{width: {xs: "100%", sm: "80%"}}}>
           <Typography
-            textAlign="center"
             variant="h1"
             sx={{
-              mb: 6,
-              fontSize: "clamp(3rem, 10vw, 4rem)",
-              color: (theme) =>
-                theme.palette.mode === "light"
-                  ? "primary.main"
-                  : "primary.light",
+              mb: 2,
+              display: "flex",
+              flexDirection: {xs: "column", md: "row"},
+              alignSelf: "center",
+              textAlign: "center",
+              fontSize: "clamp(3.5rem, 10vw, 4rem)",
+              color: "primary.light",
             }}
           >
             Tesla Labor Times
           </Typography>
 
-          <Typography component="h2" variant="h4">
-            Optimize Your Service Efficiency with our project&nbsp;
+          <Typography
+            component="h2"
+            variant="h4"
+            sx={{textAlign: {xs: "center"}}}
+          >
+            Optimize Your Service Efficiency with our project
             <Link href="https://teslalabortime.online/">
               <Typography
-                component="span"
                 variant="h4"
                 sx={{
-                  color: (theme) =>
-                    theme.palette.mode === "light"
-                      ? "primary.main"
-                      : "primary.light",
+                  color: "primary.light",
                 }}
               >
                 teslalabortime.online
@@ -162,7 +157,7 @@ export default function LaborTimes() {
             detailed repair times for various Tesla components, ensuring that
             your service operations are efficient and reliable.
           </Typography>
-        </Box>
+        </Stack>
         <Box
           sx={{
             width: {sm: "100%", md: "60%"},
