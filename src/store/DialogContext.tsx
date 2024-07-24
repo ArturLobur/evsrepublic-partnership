@@ -10,8 +10,6 @@ const DialogContext = createContext<DialogContextType | undefined>(undefined);
 export const DialogProvider: FC<{children: ReactNode}> = ({children}) => {
   const [open, setOpen] = useState(false);
 
-  console.log("open", open);
-
   const toggleDialog = () => setOpen(!open);
 
   return (
