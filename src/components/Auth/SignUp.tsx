@@ -6,14 +6,17 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
+import {useDialog} from "../../store/DialogContext.tsx";
 import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
 
 export default function SignUp({onClose}: {onClose: () => void}) {
+  const {toggleDialog} = useDialog();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
-    await sendDataToGoogleDoc(data).then(() => onClose());
+    sendDataToGoogleDoc(data)
+      .then(() => onClose())
+      .then(() => toggleDialog());
     (event.target as HTMLFormElement).reset();
   };
 

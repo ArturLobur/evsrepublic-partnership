@@ -8,10 +8,12 @@ import {createFileRoute} from "@tanstack/react-router";
 import About from "../components/About.tsx";
 import AppAppBar from "../components/AppAppBar.tsx";
 import CoursesAndCertifications from "../components/CoursesAndCertifications.tsx";
+import DialogAlert from "../components/DialogAlert.tsx";
 import Footer from "../components/Footer.tsx";
 import LaborTimes from "../components/LaborTimes.tsx";
 import Marketing from "../components/Marketing.tsx";
 import Service from "../components/Service.tsx";
+import {DialogProvider} from "../store/DialogContext.tsx";
 import {siteColors} from "../system/constants.ts";
 
 export const Route = createFileRoute("/")({
@@ -30,22 +32,25 @@ function LandingPage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppAppBar />
-      <About />
-      <Box>
-        {/*  <LogoCollection />*/}
+      <DialogProvider>
+        <CssBaseline />
+        <AppAppBar />
+        <About />
+        <Box>
+          {/*  <LogoCollection />*/}
 
-        <Divider />
-        <LaborTimes />
-        <Divider />
-        <Service />
-        <Divider />
-        <CoursesAndCertifications />
+          <Divider />
+          <LaborTimes />
+          <Divider />
+          <Service />
+          <Divider />
+          <CoursesAndCertifications />
 
-        <Marketing />
-        <Footer />
-      </Box>
+          <Marketing />
+          <Footer />
+        </Box>
+        <DialogAlert />
+      </DialogProvider>
     </ThemeProvider>
   );
 }

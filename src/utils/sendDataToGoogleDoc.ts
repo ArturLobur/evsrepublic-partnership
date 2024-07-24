@@ -7,9 +7,9 @@ export async function sendDataToGoogleDoc(data: FormData) {
       method: "POST",
       body: data,
     },
-  ).then((res) =>
-    res.ok
-      ? toast.success("We will contact with you")
-      : toast.error("Sorry something went wrong"),
-  );
+  ).then((res) => {
+    if (!res.ok) {
+      toast.error("Sorry something went wrong");
+    }
+  });
 }
