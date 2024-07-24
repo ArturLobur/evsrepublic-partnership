@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import teslalabortime from "../assets/teslalabortime.png";
+import {useDialog} from "../store/DialogContext.tsx";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 const teslalabortimeStyle = {
@@ -72,13 +73,15 @@ const benefitsItems = [
 export default function LaborTimes() {
   const [formValue, setFormValue] = React.useState("");
 
+  const {toggleDialog} = useDialog();
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (formValue !== "") {
       const data = new FormData();
       data.append("Telephone", formValue);
 
-      await sendDataToGoogleDoc(data);
+      await sendDataToGoogleDoc(data).then(() => toggleDialog());
       setFormValue("");
     }
   };

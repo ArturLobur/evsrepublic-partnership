@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import * as React from "react";
 
 import logo from "../assets/svg/logo.svg";
+import {useDialog} from "../store/DialogContext.tsx";
 import {menuItems} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
@@ -18,6 +19,7 @@ const logoStyle = {
 
 export default function Footer() {
   const [formValue, setFormValue] = React.useState("");
+  const {toggleDialog} = useDialog();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,7 +27,7 @@ export default function Footer() {
       const data = new FormData();
       data.append("Telephone", formValue);
 
-      await sendDataToGoogleDoc(data);
+      await sendDataToGoogleDoc(data).then(() => toggleDialog());
       setFormValue("");
     }
   };

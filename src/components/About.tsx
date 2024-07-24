@@ -7,11 +7,14 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
+import {useDialog} from "../store/DialogContext.tsx";
 import {siteColors} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 export default function About() {
   const [formValue, setFormValue] = React.useState("");
+
+  const {toggleDialog} = useDialog();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,7 +22,7 @@ export default function About() {
       const data = new FormData();
       data.append("Telephone", formValue);
 
-      await sendDataToGoogleDoc(data);
+      await sendDataToGoogleDoc(data).then(() => toggleDialog());
       setFormValue("");
     }
   };
