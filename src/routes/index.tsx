@@ -28,6 +28,9 @@ function LandingPage() {
         main: siteColors.neon,
       },
     },
+    typography: {
+      fontFamily: ["Montserrat", "sans-serif"].join(","),
+    },
   });
 
   return (
