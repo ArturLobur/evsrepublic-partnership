@@ -80,7 +80,7 @@ export default function About() {
                     : "primary.light",
               }}
             >
-              EV repair
+              EV repairs
             </Typography>
           </Typography>
 
