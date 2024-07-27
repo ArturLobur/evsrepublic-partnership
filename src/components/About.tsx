@@ -62,7 +62,7 @@ export default function About() {
             variant="h1"
             sx={{
               display: "flex",
-              flexDirection: {xs: "column", lg: "row"},
+              flexDirection: "column",
               alignSelf: "center",
               textAlign: "center",
               fontSize: "clamp(3.5rem, 10vw, 4rem)",
