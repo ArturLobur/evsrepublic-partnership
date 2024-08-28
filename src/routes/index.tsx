@@ -15,6 +15,7 @@ import Marketing from "../components/Marketing.tsx";
 import Service from "../components/Service.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {siteColors} from "../system/constants.ts";
+import HowItWorks from "../components/HowItWorks.tsx";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -50,6 +51,8 @@ function LandingPage() {
           <CoursesAndCertifications />
 
           <Marketing />
+          <Divider />
+          <HowItWorks/>
           <Footer />
         </Box>
         <DialogAlert />

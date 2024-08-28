@@ -13,4 +13,5 @@ export const menuItems = [
   {name: "coursesAndCertifications", label: "Education & Certificates"},
 
   {name: "marketing", label: "Marketing"},
+  {name: "howItWorks", label: "How It Works"},
 ];

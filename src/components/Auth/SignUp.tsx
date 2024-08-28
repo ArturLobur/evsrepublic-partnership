@@ -75,6 +75,48 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           id="tel"
           autoComplete="tel"
         />
+        <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="numberShops"
+            label="Number of Auto Repair Shops "
+            type="tel"
+            id="tel"
+            autoComplete="tel"
+        />
+        <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="state"
+            label="State"
+            type="tel"
+            id="tel"
+            autoComplete="tel"
+        />
+        <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="city"
+            label="City"
+            type="tel"
+            id="tel"
+            autoComplete="tel"
+        />
+        <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="years"
+            label="Years in Operation"
+            type="tel"
+            id="tel"
+            autoComplete="tel"
+        />
+
+
         <Button type="submit" fullWidth variant="contained" sx={{mt: 3, mb: 2}}>
           Sign Up
         </Button>
