@@ -103,10 +103,10 @@ export default function HowItWorks () {
                     <h2>6. Join the EV Revolution</h2>
                     <ul>
                         <li>
-                            <strong>Step 1: Start Your Journey:</strong> Take the first step towards becoming a leader in EV servicing by joining our partnership program today. Our team is here to guide you every step of the way.
+                            <strong></strong> Take the first step towards becoming a leader in EV servicing by joining our partnership program today. Our team is here to guide you every step of the way.
                         </li>
                         <li>
-                            <strong>Step 2: Grow and Thrive:</strong> With EVSREPUBLIC, you’ll have the support, training, and resources to grow your business and thrive in the emerging EV market.
+                            <strong></strong> With us, you’ll have the support, training, and resources to grow your business and thrive in the emerging EV market.
                         </li>
                     </ul>
                 </Typography>
