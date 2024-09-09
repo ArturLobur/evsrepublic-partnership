@@ -1,3 +1,4 @@
+import {styled} from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
@@ -11,6 +12,7 @@ const logoStyle = {
   width: "133px",
   height: "auto",
   cursor: "pointer",
+  marginTop: "-12px",
 };
 
 interface MenuProps {
@@ -20,14 +22,32 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
   return (
-    <>
+    <Box sx={{width: "100%"}}>
+      <ButtonsContainer sx={{display: {xs: "none", md: "flex"}}}>
+        <ButtonStyled
+          color="secondary"
+          variant="outlined"
+          size="small"
+          name="sign-in"
+          onClick={onButtonClick}
+        >
+          Sign up
+        </ButtonStyled>
+        <ButtonStyled
+          color="primary"
+          variant="contained"
+          size="small"
+          name="sign-up"
+          onClick={onButtonClick}
+        >
+          Sign in
+        </ButtonStyled>
+      </ButtonsContainer>
       <Box
         sx={{
-          flexGrow: 1,
           display: "flex",
-          alignItems: "center",
-          ml: "-18px",
-          px: 0,
+          justifyContent: "space-between",
+          alignItems: "end",
         }}
       >
         <img
@@ -37,48 +57,42 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
           style={logoStyle}
           alt="logo"
         />
-        <Box sx={{display: {xs: "none", md: "flex"}}}>
+        <MenuContainer sx={{display: {xs: "none", md: "flex"}}}>
           {menuItems.map((item) => (
             <MenuItem
+              sx={{p: 0, ml: 2}}
               key={item.name}
               onClick={() => scrollToSection(item.name)}
-              sx={{py: "6px", px: "12px"}}
             >
               <Typography variant="body2" color="text.primary">
                 {item.label}
               </Typography>
             </MenuItem>
           ))}
-        </Box>
+        </MenuContainer>
       </Box>
-      <Box
-        sx={{
-          display: {xs: "none", md: "flex"},
-          gap: 0.5,
-          alignItems: "center",
-        }}
-      >
-        <Button
-          color="primary"
-          variant="text"
-          size="small"
-          name="sign-in"
-          onClick={onButtonClick}
-        >
-          Sign in
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          size="small"
-          name="sign-up"
-          onClick={onButtonClick}
-        >
-          Sign up
-        </Button>
-      </Box>
-    </>
+    </Box>
   );
 };
+
+const ButtonsContainer = styled(Box)({
+  display: "flex",
+  justifyContent: "end",
+  gap: 15,
+});
+
+const MenuContainer = styled(Box)({
+  display: "flex",
+  justifyContent: "end",
+  gap: 2,
+  paddingBottom: 18,
+});
+
+const ButtonStyled = styled(Button)({
+  padding: "11px 15px",
+  fontSize: 12,
+  lineHeight: "14px",
+  borderRadius: 30,
+});
 
 export default Menu;

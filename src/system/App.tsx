@@ -28,6 +28,9 @@ const App = () => {
       primary: {
         main: siteColors.neon,
       },
+      secondary: {
+        main: siteColors.secondary,
+      },
     },
   });
 
