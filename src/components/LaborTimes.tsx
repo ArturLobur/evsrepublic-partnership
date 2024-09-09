@@ -12,7 +12,6 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-import teslalabortime from "../assets/teslalabortime.png";
 import {useDialog} from "../store/DialogContext.tsx";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
@@ -243,11 +242,7 @@ export default function LaborTimes() {
             </Grid>
           ))}
         </Grid>
-        <img
-          style={teslalabortimeStyle}
-          src={teslalabortime}
-          alt="teslalabortime"
-        />
+        <img style={teslalabortimeStyle} alt="teslalabortime" />
         <Box
           sx={{
             width: {sm: "100%", md: "60%"},

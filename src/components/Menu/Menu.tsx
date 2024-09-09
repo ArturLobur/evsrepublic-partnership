@@ -4,15 +4,13 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 
-import logo from "../../assets/svg/logo.svg";
+import logo from "../../assets/logo.png";
 import {menuItems} from "../../system/constants.ts";
 
 const logoStyle = {
-  width: "175px",
+  width: "133px",
   height: "auto",
   cursor: "pointer",
-  marginLeft: "24px",
-  paddingRight: "12px",
 };
 
 interface MenuProps {

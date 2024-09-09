@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import * as React from "react";
 
-import logo from "../assets/svg/logo.svg";
+import logo from "../assets/logo.png";
 import {useDialog} from "../store/DialogContext.tsx";
 import {menuItems} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
