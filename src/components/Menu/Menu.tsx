@@ -1,8 +1,7 @@
 import {styled} from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 import React from "react";
 
 import logo from "../../assets/logo.png";
@@ -59,15 +58,16 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
         />
         <MenuContainer sx={{display: {xs: "none", md: "flex"}}}>
           {menuItems.map((item) => (
-            <MenuItem
-              sx={{p: 0, ml: 2}}
+            <Link
+              underline="hover"
+              variant="body2"
+              color="text.primary"
+              sx={{p: 0, ml: 2, cursor: "pointer"}}
               key={item.name}
               onClick={() => scrollToSection(item.name)}
             >
-              <Typography variant="body2" color="text.primary">
-                {item.label}
-              </Typography>
-            </MenuItem>
+              {item.label}
+            </Link>
           ))}
         </MenuContainer>
       </Box>
