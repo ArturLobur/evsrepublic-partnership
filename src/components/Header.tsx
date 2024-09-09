@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <AppBar sx={{background: "none", boxShadow: "none", mt: 2}}>
-      <Container>
+      <Container maxWidth="xl">
         <Toolbar variant="regular">
           <Menu
             scrollToSection={scrollToSection}

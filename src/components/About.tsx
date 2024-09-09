@@ -1,4 +1,3 @@
-import {alpha} from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -7,8 +6,8 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
+import backgroundImg from "../assets/backgroundImg.png";
 import {useDialog} from "../store/DialogContext.tsx";
-import {siteColors} from "../system/constants.ts";
 import {sendDataToGoogleDoc} from "../utils/sendDataToGoogleDoc.ts";
 
 export default function About() {
@@ -40,11 +39,10 @@ export default function About() {
 
   return (
     <Box
-      id="about"
       sx={{
         width: "100%",
-        backgroundImage: `linear-gradient(${siteColors.darkGrey}, ${alpha("#090E10", 0.0)})`,
-        backgroundSize: "100% 20%",
+        backgroundImage: `url(${backgroundImg})`, // Замените на путь к вашему изображению
+        backgroundSize: "cover", // Настройка размера изображения
         backgroundRepeat: "no-repeat",
       }}
     >
