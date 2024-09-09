@@ -10,10 +10,10 @@ import Divider from "@mui/material/Divider";
 import {ThemeProvider} from "@mui/material/styles";
 
 import About from "../components/About.tsx";
-import AppAppBar from "../components/AppAppBar.tsx";
 import CoursesAndCertifications from "../components/CoursesAndCertifications.tsx";
 import DialogAlert from "../components/DialogAlert.tsx";
 import Footer from "../components/Footer.tsx";
+import Header from "../components/Header.tsx";
 import HowItWorks from "../components/HowItWorks.tsx";
 import LaborTimes from "../components/LaborTimes.tsx";
 import Marketing from "../components/Marketing.tsx";
@@ -35,7 +35,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <DialogProvider>
         <CssBaseline />
-        <AppAppBar />
+        <Header />
         <About />
         <Box>
           {/*  <LogoCollection />*/}

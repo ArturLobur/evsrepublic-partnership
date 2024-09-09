@@ -4,14 +4,13 @@ import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import {useCallback} from "react";
 
-import {siteColors} from "../system/constants.ts";
 import SignIn from "./Auth/SignIn.tsx";
 import SignUp from "./Auth/SignUp.tsx";
 import Menu from "./Menu/Menu.tsx";
 import MobileMenu from "./Menu/MobileMenu.tsx";
 import ModalWindow from "./ModalWindow.tsx";
 
-function AppAppBar() {
+const Header = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalType, setModalType] = React.useState<null | string>(null);
@@ -51,34 +50,9 @@ function AppAppBar() {
     );
 
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        boxShadow: 0,
-        backgroundColor: "transparent",
-        backgroundImage: "none",
-        mt: 2,
-      }}
-    >
-      <Container maxWidth="lg">
-        <Toolbar
-          variant="regular"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexShrink: 0,
-            borderRadius: "999px",
-            bgcolor: "rgba(0, 0, 0, 0.4)",
-            backdropFilter: "blur(24px)",
-            maxHeight: 40,
-            border: "1px solid",
-            borderColor: "divider",
-            boxShadow: `0 0 1px ${siteColors.darkGrey}, 
-                1px 1.5px 2px -1px ${siteColors.darkGrey}, 
-                4px 4px 12px -2.5px ${siteColors.darkGrey}`,
-          }}
-        >
+    <AppBar sx={{background: "none", boxShadow: "none", mt: 2}}>
+      <Container>
+        <Toolbar variant="regular">
           <Menu
             scrollToSection={scrollToSection}
             onButtonClick={handleButtonClick}
@@ -99,6 +73,6 @@ function AppAppBar() {
       </Container>
     </AppBar>
   );
-}
+};
 
-export default AppAppBar;
+export default Header;
