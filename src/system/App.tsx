@@ -5,13 +5,13 @@ import Divider from "@mui/material/Divider";
 import {ThemeProvider} from "@mui/material/styles";
 
 import DialogAlert from "../components/DialogAlert.tsx";
-import About from "../sections/About.tsx";
 import CoursesAndCertifications from "../sections/CoursesAndCertifications.tsx";
 import Footer from "../sections/Footer.tsx";
 import Header from "../sections/Header.tsx";
 import HowItWorks from "../sections/HowItWorks.tsx";
 import LaborTimes from "../sections/LaborTimes.tsx";
 import Marketing from "../sections/Marketing.tsx";
+import SectionAbout from "../sections/SectionAbout.tsx";
 import Service from "../sections/Service.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {siteColors} from "./constants.ts";
@@ -39,7 +39,7 @@ const App = () => {
       <DialogProvider>
         <CssBaseline />
         <Header />
-        <About />
+        <SectionAbout />
         <Box>
           {/*  <LogoCollection />*/}
 

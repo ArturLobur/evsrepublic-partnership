@@ -9,6 +9,7 @@ interface CustomButtonProps {
   name?: string;
   onClick: (_event: React.MouseEvent<HTMLButtonElement>) => void;
   children: React.ReactNode;
+  type?: "submit" | "button";
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -18,6 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   name,
   onClick,
   children,
+  type = "button",
 }) => {
   return (
     <ButtonStyled
@@ -26,6 +28,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       size={size}
       name={name}
       onClick={onClick}
+      type={type}
     >
       {children}
     </ButtonStyled>
