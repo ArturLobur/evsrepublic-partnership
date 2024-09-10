@@ -4,15 +4,15 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import {ThemeProvider} from "@mui/material/styles";
 
-import About from "../components/About.tsx";
-import CoursesAndCertifications from "../components/CoursesAndCertifications.tsx";
 import DialogAlert from "../components/DialogAlert.tsx";
-import Footer from "../components/Footer.tsx";
-import Header from "../components/Header.tsx";
-import HowItWorks from "../components/HowItWorks.tsx";
-import LaborTimes from "../components/LaborTimes.tsx";
-import Marketing from "../components/Marketing.tsx";
-import Service from "../components/Service.tsx";
+import About from "../sections/About.tsx";
+import CoursesAndCertifications from "../sections/CoursesAndCertifications.tsx";
+import Footer from "../sections/Footer.tsx";
+import Header from "../sections/Header.tsx";
+import HowItWorks from "../sections/HowItWorks.tsx";
+import LaborTimes from "../sections/LaborTimes.tsx";
+import Marketing from "../sections/Marketing.tsx";
+import Service from "../sections/Service.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {siteColors} from "./constants.ts";
 
