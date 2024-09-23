@@ -2,6 +2,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
+import laborImg from "../assets/laborImg.png";
+
 const SectionLaborTimes = () => {
   return (
     <Box
@@ -16,8 +18,8 @@ const SectionLaborTimes = () => {
         maxWidth="xl"
         sx={{
           display: "flex",
-          flexDirection: "column",
           gap: {xs: 3, sm: 6},
+          position: "relative",
         }}
       >
         <Box
@@ -48,6 +50,13 @@ const SectionLaborTimes = () => {
             detailed repair times for various Tesla components, ensuring that
             your service operations are efficient and reliable.
           </Typography>
+        </Box>
+        <Box sx={{minHeight: 560}}>
+          <img
+            style={{position: "absolute", right: 0, top: -110}}
+            src={laborImg}
+            alt="laborImg"
+          />
         </Box>
       </Container>
     </Box>
