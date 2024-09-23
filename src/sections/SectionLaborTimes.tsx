@@ -1,5 +1,7 @@
+import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
 import laborImg from "../assets/laborImg.png";
@@ -50,6 +52,23 @@ const SectionLaborTimes = () => {
             detailed repair times for various Tesla components, ensuring that
             your service operations are efficient and reliable.
           </Typography>
+          <Box>
+            <Link
+              sx={{
+                textTransform: "uppercase",
+                fontSize: 12,
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+              }}
+              href="https://teslalabortime.online/"
+              target="_blank"
+              underline="hover"
+            >
+              <ArrowCircleRightOutlinedIcon fontSize="large" color="primary" />
+              VISIT teslalabortime.online
+            </Link>
+          </Box>
         </Box>
         <Box sx={{minHeight: 560}}>
           <img
