@@ -45,6 +45,7 @@ const LaborTimesBenefits = () => {
         {benefitsItems.map((item, index) => (
           <CardItem
             key={index}
+            variant="elevation"
             icon={<CheckIcon />}
             title={item.title}
             description={item.description}

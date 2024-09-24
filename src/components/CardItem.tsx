@@ -7,11 +7,15 @@ interface CardItemI {
   icon: React.ReactElement;
   title: string;
   description: string;
+  variant?: "outlined" | "elevation";
 }
 
-const CardItem: React.FC<CardItemI> = ({icon, title, description}) => {
+const CardItem: React.FC<CardItemI> = ({icon, title, description, variant}) => {
   return (
-    <Card variant="outlined" sx={{maxWidth: 440, bgcolor: "inherit", flex: 1}}>
+    <Card
+      variant={variant ?? "outlined"}
+      sx={{maxWidth: 440, bgcolor: "inherit", flex: 1}}
+    >
       <CardContent sx={{padding: "30px 30px 30px 45px"}}>
         {icon}
         <Typography
