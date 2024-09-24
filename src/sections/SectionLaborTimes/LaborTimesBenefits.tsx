@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import CheckIcon from "../assets/checkIcon.svg";
-import CardItem from "./CardItem.tsx";
+import CheckIcon from "../../assets/checkIcon.svg";
+import CardItem from "../../components/CardItem.tsx";
 
 const benefitsItems = [
   {

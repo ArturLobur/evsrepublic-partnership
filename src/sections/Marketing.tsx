@@ -8,8 +8,8 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import {useState} from "react";
 
-import SignUp from "../components/Auth/SignUp.tsx";
 import ModalWindow from "../components/ModalWindow.tsx";
+import SignUp from "./Auth/SignUp.tsx";
 
 const items = [
   {

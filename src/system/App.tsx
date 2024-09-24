@@ -3,9 +3,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider} from "@mui/material/styles";
 
 import DialogAlert from "../components/DialogAlert.tsx";
-import Header from "../sections/Header.tsx";
+import Header from "../sections/Header/Header.tsx";
 import SectionAbout from "../sections/SectionAbout.tsx";
-import SectionLaborTimes from "../sections/SectionLaborTimes.tsx";
+import SectionLaborTimes from "../sections/SectionLaborTimes/SectionLaborTimes.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {siteColors} from "./constants.ts";
 

@@ -4,11 +4,11 @@ import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import {useCallback} from "react";
 
-import SignIn from "../components/Auth/SignIn.tsx";
-import SignUp from "../components/Auth/SignUp.tsx";
-import Menu from "../components/Menu/Menu.tsx";
-import MobileMenu from "../components/Menu/MobileMenu.tsx";
-import ModalWindow from "../components/ModalWindow.tsx";
+import ModalWindow from "../../components/ModalWindow.tsx";
+import SignIn from "../Auth/SignIn.tsx";
+import SignUp from "../Auth/SignUp.tsx";
+import Menu from "./Menu/Menu.tsx";
+import MobileMenu from "./Menu/MobileMenu.tsx";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = React.useState(false);

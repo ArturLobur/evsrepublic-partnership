@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import React from "react";
 
-import logo from "../../assets/logo.png";
-import {menuItems} from "../../system/constants.ts";
-import CustomButton from "../CustomButton.tsx";
+import logo from "../../../assets/logo.png";
+import CustomButton from "../../../components/CustomButton.tsx";
+import {menuItems} from "../../../system/constants.ts";
 
 const logoStyle = {
   width: "133px",

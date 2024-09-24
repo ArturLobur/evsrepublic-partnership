@@ -2,10 +2,10 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import Feature1 from "../assets/keyFeatureIcon-1.svg";
-import Feature2 from "../assets/keyFeatureIcon-2.svg";
-import Feature3 from "../assets/keyFeatureIcon-3.svg";
-import CardItem from "./CardItem.tsx";
+import Feature1 from "../../assets/keyFeatureIcon-1.svg";
+import Feature2 from "../../assets/keyFeatureIcon-2.svg";
+import Feature3 from "../../assets/keyFeatureIcon-3.svg";
+import CardItem from "../../components/CardItem.tsx";
 
 const LaborTimesKeyFeatures = () => {
   return (

@@ -6,7 +6,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 
-import {menuItems} from "../../system/constants.ts";
+import {menuItems} from "../../../system/constants.ts";
 
 interface MobileMenuProps {
   toggleDrawer: (_newOpen: boolean) => () => void;
