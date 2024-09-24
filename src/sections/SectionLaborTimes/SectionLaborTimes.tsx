@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import laborImg from "../../assets/laborImg.png";
 import LaborTimesBenefits from "./LaborTimesBenefits.tsx";
+import LaborTimesGetStarted from "./LaborTimesGetStarted.tsx";
 import LaborTimesKeyFeatures from "./LaborTimesKeyFeatures.tsx";
 
 const SectionLaborTimes = () => {
@@ -24,11 +25,10 @@ const SectionLaborTimes = () => {
           spacing={12}
           sx={{
             display: "flex",
-            gap: {xs: 3, sm: 6},
             position: "relative",
           }}
         >
-          <Box>
+          <Box sx={{paddingBottom: 12}}>
             <Box
               sx={{
                 display: "flex",
@@ -88,6 +88,7 @@ const SectionLaborTimes = () => {
           </Box>
           <LaborTimesKeyFeatures />
           <LaborTimesBenefits />
+          <LaborTimesGetStarted />
         </Stack>
       </Container>
     </Box>
