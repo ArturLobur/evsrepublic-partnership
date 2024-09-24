@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-import backgroundImg from "../assets/backgroundImg.png";
-import PhoneInput from "../components/PhoneInput.tsx";
+import backgroundImg from "../../assets/backgroundImg.png";
+import PhoneInput from "../../components/PhoneInput.tsx";
 
 export default function SectionAbout() {
   return (

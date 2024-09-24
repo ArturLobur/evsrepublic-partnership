@@ -18,6 +18,7 @@ const SectionLaborTimes = () => {
         pt: {xl: 4, lg: 0},
         color: "white",
         bgcolor: "#06090a",
+        pb: 12,
       }}
     >
       <Container maxWidth="xl">
