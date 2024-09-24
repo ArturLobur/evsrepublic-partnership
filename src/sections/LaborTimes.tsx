@@ -65,7 +65,7 @@ const benefitsItems = [
     icon: <DiagnosticToolRoundedIcon />,
     title: "Cost Savings",
     description:
-      "Optimize labor costs by accurately estimating the time required for each repair, avoiding overestimation or underestimation.\n",
+      "Optimize labor costs by accurately estimating the time required for each repair, avoiding overestimation or underestimation.",
   },
 ];
 

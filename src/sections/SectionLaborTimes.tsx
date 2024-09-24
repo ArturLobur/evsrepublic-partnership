@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 import laborImg from "../assets/laborImg.png";
+import LaborTimesBenefits from "../components/LaborTimesBenefits.tsx";
 import LaborTimesKeyFeatures from "../components/LaborTimesKeyFeatures.tsx";
 
 const SectionLaborTimes = () => {
@@ -86,6 +87,7 @@ const SectionLaborTimes = () => {
             />
           </Box>
           <LaborTimesKeyFeatures />
+          <LaborTimesBenefits />
         </Stack>
       </Container>
     </Box>
