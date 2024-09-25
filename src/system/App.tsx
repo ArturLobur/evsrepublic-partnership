@@ -1,4 +1,3 @@
-import {createTheme} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider} from "@mui/material/styles";
 
@@ -12,26 +11,9 @@ import SectionMarketing from "../sections/SectionMarketing/SectionMarketing.tsx"
 import RemoteServicesBenefits from "../sections/SectionRemoteServices/RemoteServicesBenefits.tsx";
 import SectionRemoteServices from "../sections/SectionRemoteServices/SectionRemoteServices.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
-import {siteColors} from "./constants.ts";
+import {theme} from "./appTheme.ts";
 
 const App = () => {
-  const theme = createTheme({
-    palette: {
-      mode: "dark",
-      primary: {
-        main: siteColors.neon,
-      },
-      secondary: {
-        main: siteColors.secondary,
-      },
-    },
-    typography: {
-      allVariants: {
-        fontFamily: "DM Sans",
-      },
-    },
-  });
-
   return (
     <ThemeProvider theme={theme}>
       <DialogProvider>
