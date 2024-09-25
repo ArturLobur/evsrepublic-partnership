@@ -5,6 +5,7 @@ import {ThemeProvider} from "@mui/material/styles";
 import DialogAlert from "../components/DialogAlert.tsx";
 import Header from "../sections/Header/Header.tsx";
 import SectionAbout from "../sections/SectionAbout/SectionAbout.tsx";
+import SectionEducationAndCertificates from "../sections/SectionEducationAndSertificates/SectionEducationAndCertificates.tsx";
 import SectionLaborTimes from "../sections/SectionLaborTimes/SectionLaborTimes.tsx";
 import RemoteServicesBenefits from "../sections/SectionRemoteServices/RemoteServicesBenefits.tsx";
 import SectionRemoteServices from "../sections/SectionRemoteServices/SectionRemoteServices.tsx";
@@ -38,6 +39,7 @@ const App = () => {
         <SectionLaborTimes />
         <SectionRemoteServices />
         <RemoteServicesBenefits />
+        <SectionEducationAndCertificates />
         <DialogAlert />
       </DialogProvider>
     </ThemeProvider>
