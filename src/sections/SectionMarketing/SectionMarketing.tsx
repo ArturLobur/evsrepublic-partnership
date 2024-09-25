@@ -1,6 +1,5 @@
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import {CardContent} from "@mui/material";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -8,7 +7,9 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import {useState} from "react";
 
+import ModalWindow from "../../components/ModalWindow.tsx";
 import SectionsHeader from "../../components/SectionsHeader.tsx";
+import SignUp from "../Auth/SignUp.tsx";
 
 const marketingCards = [
   {
@@ -81,33 +82,36 @@ const SectionMarketing = () => {
                   {card.description}
                 </Typography>
               </CardContent>
-              <Box>
-                <Link
-                  color="text.primary"
-                  sx={{
-                    textTransform: "uppercase",
-                    fontSize: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                  }}
-                  underline="hover"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    handleModalOpen();
-                  }}
-                >
-                  <ArrowCircleRightOutlinedIcon
-                    fontSize="large"
-                    color="primary"
-                  />
-                  learn more
-                </Link>
-              </Box>
+
+              <Link
+                color="text.primary"
+                sx={{
+                  textTransform: "uppercase",
+                  fontSize: 12,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  cursor: "pointer",
+                }}
+                underline="hover"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleModalOpen();
+                }}
+              >
+                <ArrowCircleRightOutlinedIcon
+                  fontSize="large"
+                  color="primary"
+                />
+                learn more
+              </Link>
             </Card>
           ))}
         </Grid>
       </SectionsHeader>
+      <ModalWindow onOpen={modalOpen} onClose={() => setModalOpen(!modalOpen)}>
+        <SignUp onClose={() => setModalOpen(false)} />
+      </ModalWindow>
     </Container>
   );
 };
