@@ -110,7 +110,7 @@ const examplesOfCertifications = [
 
 const SectionEducationAndCertificates = () => (
   <Box
-    id="laborTimes"
+    id="education"
     sx={{
       pt: {xl: 4, lg: 0},
       color: "white",

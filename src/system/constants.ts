@@ -11,8 +11,7 @@ export const siteColors = {
 export const menuItems = [
   {name: "laborTimes", label: "Labor Times"},
   {name: "service", label: "Remote Services"},
-  {name: "coursesAndCertifications", label: "Education & Certificates"},
-
+  {name: "education", label: "Education & Certificates"},
   {name: "marketing", label: "Marketing"},
   {name: "howItWorks", label: "How It Works"},
 ];

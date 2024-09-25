@@ -33,7 +33,7 @@ const SectionMarketing = () => {
   };
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="marketing">
       <SectionsHeader
         title="Marketing"
         firstDescription="Elevate Your Business with Comprehensive Marketing Support"
