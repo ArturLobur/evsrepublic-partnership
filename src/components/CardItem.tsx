@@ -8,13 +8,25 @@ interface CardItemI {
   title: string;
   description: string;
   variant?: "outlined" | "elevation";
+  backgroundColor?: string;
 }
 
-const CardItem: React.FC<CardItemI> = ({icon, title, description, variant}) => {
+const CardItem: React.FC<CardItemI> = ({
+  icon,
+  title,
+  description,
+  variant,
+  backgroundColor,
+}) => {
   return (
     <Card
       variant={variant ?? "outlined"}
-      sx={{maxWidth: 440, bgcolor: "inherit", flex: 1}}
+      sx={{
+        maxWidth: 440,
+        backgroundColor: backgroundColor ?? "inherit",
+        flexDirection: "column",
+        flex: 1,
+      }}
     >
       <CardContent sx={{padding: "30px 30px 30px 45px"}}>
         {icon}
