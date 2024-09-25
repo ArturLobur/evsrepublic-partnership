@@ -133,35 +133,33 @@ const SectionEducationAndCertificates = () => (
           }}
         >
           {items.map((item, index) => (
-            <Box key={index}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel${index}-content`}
-                  id={`panel${index}`}
-                >
-                  <Box sx={{display: "flex", flexDirection: "column"}}>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      sx={{fontSize: 18, fontWeight: 500, mb: 2}}
-                      color="primary"
-                    >
-                      {item.title}
-                    </Typography>
-                    {item.mainDescription}
-                  </Box>
-                </AccordionSummary>
-                <AccordionDetails sx={{pt: 0}}>
-                  {item.additionalDescription.map((row, index) => (
-                    <Typography key={index} sx={{mb: 2}}>
-                      {row.list}
-                    </Typography>
-                  ))}
-                </AccordionDetails>
-              </Accordion>
-            </Box>
+            <Accordion key={index}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={`panel${index}-content`}
+                id={`panel${index}`}
+              >
+                <Box sx={{display: "flex", flexDirection: "column"}}>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{fontSize: 18, fontWeight: 500, mb: 2}}
+                    color="primary"
+                  >
+                    {item.title}
+                  </Typography>
+                  {item.mainDescription}
+                </Box>
+              </AccordionSummary>
+              <AccordionDetails sx={{pt: 0}}>
+                {item.additionalDescription.map((row, index) => (
+                  <Typography key={index} sx={{mb: 2}}>
+                    {row.list}
+                  </Typography>
+                ))}
+              </AccordionDetails>
+            </Accordion>
           ))}
         </Grid>
       </SectionsHeader>
