@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 
 interface CardItemI {
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
   title: string;
   description: string;
   variant?: "outlined" | "elevation";

@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import SertificationIcon from "../../assets/sertificationsIcon.svg";
+import CertificationIcon from "../../assets/certificationsIcon.svg";
 import CardItem from "../../components/CardItem.tsx";
 import SectionsHeader from "../../components/SectionsHeader.tsx";
 
@@ -180,7 +180,7 @@ const SectionEducationAndCertificates = () => (
           {examplesOfCertifications.map((e, index) => (
             <CardItem
               key={index}
-              icon={<SertificationIcon />}
+              icon={<CertificationIcon />}
               title={e.title}
               description={e.description}
             />

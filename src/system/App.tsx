@@ -7,6 +7,7 @@ import Header from "../sections/Header/Header.tsx";
 import SectionAbout from "../sections/SectionAbout/SectionAbout.tsx";
 import SectionEducationAndCertificates from "../sections/SectionEducationAndSertificates/SectionEducationAndCertificates.tsx";
 import SectionLaborTimes from "../sections/SectionLaborTimes/SectionLaborTimes.tsx";
+import SectionMarketing from "../sections/SectionMarketing/SectionMarketing.tsx";
 import RemoteServicesBenefits from "../sections/SectionRemoteServices/RemoteServicesBenefits.tsx";
 import SectionRemoteServices from "../sections/SectionRemoteServices/SectionRemoteServices.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
@@ -40,6 +41,7 @@ const App = () => {
         <SectionRemoteServices />
         <RemoteServicesBenefits />
         <SectionEducationAndCertificates />
+        <SectionMarketing />
         <DialogAlert />
       </DialogProvider>
     </ThemeProvider>
