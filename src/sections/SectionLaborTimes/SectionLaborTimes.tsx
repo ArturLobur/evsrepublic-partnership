@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 import laborImg from "../../assets/laborImg.png";
+import {containerSize} from "../../system/constants.ts";
 import LaborTimesBenefits from "./LaborTimesBenefits.tsx";
 import LaborTimesGetStarted from "./LaborTimesGetStarted.tsx";
 import LaborTimesKeyFeatures from "./LaborTimesKeyFeatures.tsx";
@@ -21,7 +22,7 @@ const SectionLaborTimes = () => {
         pb: 12,
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth={containerSize}>
         <Stack
           spacing={12}
           sx={{

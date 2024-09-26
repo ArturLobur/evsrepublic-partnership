@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import PlusIcon from "../../assets/icon-plus.svg";
+import {containerSize} from "../../system/constants.ts";
 
 const textItems = [
   {
@@ -100,10 +101,10 @@ const SectionHowItWorks = () => (
       pt: {xl: 4, lg: 0},
       color: "white",
       bgcolor: "#06090a",
-      pb: 12,
+      pb: 10,
     }}
   >
-    <Container maxWidth="xl">
+    <Container maxWidth={containerSize}>
       <Grid container spacing={4} sx={{pt: 12, mb: 12}}>
         <Grid item xs={12}>
           <Typography

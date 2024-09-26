@@ -3,11 +3,12 @@ import Typography from "@mui/material/Typography";
 
 import backgroundImg from "../../assets/getStartedImg.png";
 import PhoneInput from "../../components/PhoneInput.tsx";
+import {containerSize} from "../../system/constants.ts";
 
 const LaborTimesGetStarted = () => {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth={containerSize}
       sx={{
         backgroundImage: `url(${backgroundImg})`,
         borderRadius: "16px",

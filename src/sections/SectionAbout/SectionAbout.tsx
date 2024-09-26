@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 
 import backgroundImg from "../../assets/backgroundImg.png";
 import PhoneInput from "../../components/PhoneInput.tsx";
+import {containerSize} from "../../system/constants.ts";
 
 export default function SectionAbout() {
   return (
@@ -18,7 +19,7 @@ export default function SectionAbout() {
       }}
     >
       <Container
-        maxWidth="xl"
+        maxWidth={containerSize}
         sx={{
           display: "flex",
           flexDirection: "column",

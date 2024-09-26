@@ -15,3 +15,5 @@ export const menuItems = [
   {name: "marketing", label: "Marketing"},
   {name: "howItWorks", label: "How It Works"},
 ];
+
+export const containerSize = "xl";

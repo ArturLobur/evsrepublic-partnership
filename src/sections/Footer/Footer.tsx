@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 
 import logo from "../../assets/logo.png";
-import {menuItems} from "../../system/constants.ts";
+import {containerSize, menuItems} from "../../system/constants.ts";
 
 const logoStyle = {
   width: "133px",
@@ -38,7 +38,7 @@ export default function Footer() {
         pb: 9,
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth={containerSize}>
         <Grid container gap={6}>
           <Grid
             item

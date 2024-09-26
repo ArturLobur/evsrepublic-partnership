@@ -5,6 +5,7 @@ import * as React from "react";
 import {useCallback} from "react";
 
 import ModalWindow from "../../components/ModalWindow.tsx";
+import {containerSize} from "../../system/constants.ts";
 import SignIn from "../Auth/SignIn.tsx";
 import SignUp from "../Auth/SignUp.tsx";
 import Menu from "./Menu/Menu.tsx";
@@ -54,7 +55,7 @@ const Header = () => {
       position="absolute"
       sx={{background: "none", boxShadow: "none", mt: 2}}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth={containerSize}>
         <Toolbar variant="regular" sx={{p: "0 !important"}}>
           <Menu
             scrollToSection={scrollToSection}

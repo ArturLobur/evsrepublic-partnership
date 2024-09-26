@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import CheckIcon from "../../assets/checkIcon.svg";
+import {containerSize} from "../../system/constants.ts";
 
 const benefits = [
   {
@@ -26,7 +27,7 @@ const benefits = [
 
 const RemoteServicesBenefits = () => (
   <Box sx={{bgcolor: "rgba(255, 255, 255, 0.05)"}}>
-    <Container maxWidth="xl" sx={{pt: 12, pb: 12}}>
+    <Container maxWidth={containerSize} sx={{pt: 12, pb: 12}}>
       <Grid container>
         <Grid item xs={4}>
           <Typography sx={{fontSize: 26, lineHeight: "36px", fontWeight: 400}}>

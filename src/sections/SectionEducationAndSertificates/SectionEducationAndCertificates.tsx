@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import CertificationIcon from "../../assets/certificationsIcon.svg";
 import CardItem from "../../components/CardItem.tsx";
 import SectionsHeader from "../../components/SectionsHeader.tsx";
+import {containerSize} from "../../system/constants.ts";
 
 const items = [
   {
@@ -118,7 +119,7 @@ const SectionEducationAndCertificates = () => (
       pb: 12,
     }}
   >
-    <Container maxWidth="xl">
+    <Container maxWidth={containerSize}>
       <SectionsHeader
         title="Education & Certificates"
         firstDescription="At EV’s Republic, we believe that knowledge is power, especially in the rapidly evolving world of electric vehicles."

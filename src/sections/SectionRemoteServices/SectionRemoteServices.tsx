@@ -6,6 +6,7 @@ import DiagnosticIcon from "../../assets/diagnosticsIcon.svg";
 import ProgrammingIcon from "../../assets/programmingIcon.svg";
 import CardItem from "../../components/CardItem.tsx";
 import SectionsHeader from "../../components/SectionsHeader.tsx";
+import {containerSize} from "../../system/constants.ts";
 
 const operations = [
   {
@@ -29,7 +30,7 @@ const operations = [
 ];
 
 const SectionRemoteServices = () => (
-  <Container maxWidth="xl" id="service">
+  <Container maxWidth={containerSize} id="service">
     <SectionsHeader
       title="Remote Services"
       firstDescription="Enhance Your Operations with Advanced Remote Services."

@@ -9,6 +9,7 @@ import {useState} from "react";
 
 import ModalWindow from "../../components/ModalWindow.tsx";
 import SectionsHeader from "../../components/SectionsHeader.tsx";
+import {containerSize} from "../../system/constants.ts";
 import SignUp from "../Auth/SignUp.tsx";
 
 const marketingCards = [
@@ -34,7 +35,7 @@ const SectionMarketing = () => {
   };
 
   return (
-    <Container maxWidth="xl" id="marketing">
+    <Container maxWidth={containerSize} id="marketing">
       <SectionsHeader
         title="Marketing"
         firstDescription="Elevate Your Business with Comprehensive Marketing Support"
