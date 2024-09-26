@@ -9,7 +9,7 @@ interface SectionsHeaderPropsI {
   children: React.ReactNode;
 }
 
-const SectionsHeader: React.FC<SectionsHeaderPropsI> = ({
+const HeaderForSections: React.FC<SectionsHeaderPropsI> = ({
   title,
   firstDescription,
   secondDescription,
@@ -44,4 +44,4 @@ const SectionsHeader: React.FC<SectionsHeaderPropsI> = ({
   </Grid>
 );
 
-export default SectionsHeader;
+export default HeaderForSections;

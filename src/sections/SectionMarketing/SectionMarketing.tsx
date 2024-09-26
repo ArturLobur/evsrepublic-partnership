@@ -7,8 +7,8 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import {useState} from "react";
 
+import HeaderForSections from "../../components/HeaderForSections.tsx";
 import ModalWindow from "../../components/ModalWindow.tsx";
-import SectionsHeader from "../../components/SectionsHeader.tsx";
 import {containerSize} from "../../system/constants.ts";
 import SignUp from "../Auth/SignUp.tsx";
 
@@ -36,7 +36,7 @@ const SectionMarketing = () => {
 
   return (
     <Container maxWidth={containerSize} id="marketing">
-      <SectionsHeader
+      <HeaderForSections
         title="Marketing"
         firstDescription="Elevate Your Business with Comprehensive Marketing Support"
         secondDescription="We understand the importance of visibility and customer acquisition in the competitive auto service industry. As part of our partnership program, EV's Republic offers two levels of partnership: Premium and Standard (Registered Partner)."
@@ -109,7 +109,7 @@ const SectionMarketing = () => {
             </Card>
           ))}
         </Grid>
-      </SectionsHeader>
+      </HeaderForSections>
       <ModalWindow onOpen={modalOpen} onClose={() => setModalOpen(!modalOpen)}>
         <SignUp onClose={() => setModalOpen(false)} />
       </ModalWindow>

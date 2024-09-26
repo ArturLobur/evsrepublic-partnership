@@ -5,7 +5,7 @@ import ConsultingIcon from "../../assets/consultingIcon.svg";
 import DiagnosticIcon from "../../assets/diagnosticsIcon.svg";
 import ProgrammingIcon from "../../assets/programmingIcon.svg";
 import CardItem from "../../components/CardItem.tsx";
-import SectionsHeader from "../../components/SectionsHeader.tsx";
+import HeaderForSections from "../../components/HeaderForSections.tsx";
 import {containerSize} from "../../system/constants.ts";
 
 const operations = [
@@ -31,7 +31,7 @@ const operations = [
 
 const SectionRemoteServices = () => (
   <Container maxWidth={containerSize} id="service">
-    <SectionsHeader
+    <HeaderForSections
       title="Remote Services"
       firstDescription="Enhance Your Operations with Advanced Remote Services."
       secondDescription="Knowledge is power, especially in the fast-evolving world of electric
@@ -58,7 +58,7 @@ const SectionRemoteServices = () => (
           />
         ))}
       </Grid>
-    </SectionsHeader>
+    </HeaderForSections>
   </Container>
 );
 export default SectionRemoteServices;

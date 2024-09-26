@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import CertificationIcon from "../../assets/certificationsIcon.svg";
 import CardItem from "../../components/CardItem.tsx";
-import SectionsHeader from "../../components/SectionsHeader.tsx";
+import HeaderForSections from "../../components/HeaderForSections.tsx";
 import {containerSize} from "../../system/constants.ts";
 
 const items = [
@@ -120,7 +120,7 @@ const SectionEducationAndCertificates = () => (
     }}
   >
     <Container maxWidth={containerSize}>
-      <SectionsHeader
+      <HeaderForSections
         title="Education & Certificates"
         firstDescription="At EV’s Republic, we believe that knowledge is power, especially in the rapidly evolving world of electric vehicles."
         secondDescription="Our comprehensive education and certification programs are designed to equip auto service shop owners and their employees with the skills and credentials needed to excel in servicing electric vehicles."
@@ -163,7 +163,7 @@ const SectionEducationAndCertificates = () => (
             </Accordion>
           ))}
         </Grid>
-      </SectionsHeader>
+      </HeaderForSections>
       <Box>
         <Typography component="h3" sx={{fontSize: 26, mb: 4}}>
           Examples of Certifications
