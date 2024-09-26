@@ -15,10 +15,11 @@ const LaborTimesKeyFeatures = () => {
       </Typography>
       <Grid
         container
-        direction="row"
         sx={{
+          flexDirection: {xs: "column", md: "row"},
           justifyContent: "space-between",
           alignItems: "stretch",
+          gap: 3,
         }}
       >
         <CardItem

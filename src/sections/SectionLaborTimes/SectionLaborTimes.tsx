@@ -33,10 +33,12 @@ const SectionLaborTimes = () => {
           <Box sx={{paddingBottom: 12}}>
             <Box
               sx={{
+                position: "relative",
                 display: "flex",
                 maxWidth: "600px",
                 flexDirection: "column",
                 gap: 2,
+                zIndex: 2,
               }}
             >
               <Typography
@@ -82,8 +84,15 @@ const SectionLaborTimes = () => {
                 </Link>
               </Box>
             </Box>
-            <img
-              style={{position: "absolute", right: 0, top: -110}}
+            <Box
+              component="img"
+              sx={{
+                display: {xs: "none", sm: "block"},
+                position: "absolute",
+                right: 0,
+                top: -110,
+                zIndex: 1,
+              }}
               src={laborImg}
               alt="laborImg"
             />

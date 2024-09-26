@@ -22,7 +22,7 @@ const CardItem: React.FC<CardItemI> = ({
     <Card
       variant={variant ?? "outlined"}
       sx={{
-        maxWidth: 440,
+        maxWidth: {xs: "auto", md: "440px"},
         backgroundColor: backgroundColor ?? "inherit",
         flexDirection: "column",
         flex: 1,

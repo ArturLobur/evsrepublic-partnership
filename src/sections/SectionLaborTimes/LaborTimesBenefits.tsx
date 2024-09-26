@@ -38,6 +38,7 @@ const LaborTimesBenefits = () => {
         container
         sx={{
           justifyContent: "space-between",
+          flexDirection: {xs: "column", md: "row"},
           gap: {xs: 3, sm: 6},
           flexWrap: "nowrap",
         }}
