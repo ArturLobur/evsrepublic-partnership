@@ -44,9 +44,10 @@ const SectionMarketing = () => {
         <Grid
           container
           sx={{
-            gap: 10,
+            flexDirection: {xs: "column", md: "row"},
             justifyContent: "space-between",
             alignItems: "stretch",
+            gap: 10,
           }}
         >
           {marketingCards.map((card, index) => (

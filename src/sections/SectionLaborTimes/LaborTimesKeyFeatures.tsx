@@ -10,7 +10,10 @@ import CardItem from "../../components/CardItem.tsx";
 const LaborTimesKeyFeatures = () => {
   return (
     <Box>
-      <Typography component="h3" sx={{fontSize: 26, mb: 4}}>
+      <Typography
+        component="h3"
+        sx={{fontSize: 26, mb: 4, textAlign: {xs: "center", sm: "initial"}}}
+      >
         Key Features
       </Typography>
       <Grid

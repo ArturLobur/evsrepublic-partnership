@@ -29,12 +29,19 @@ const RemoteServicesBenefits = () => (
   <Box sx={{bgcolor: "rgba(255, 255, 255, 0.05)"}}>
     <Container maxWidth={containerSize} sx={{pt: 12, pb: 12}}>
       <Grid container>
-        <Grid item xs={4}>
-          <Typography sx={{fontSize: 26, lineHeight: "36px", fontWeight: 400}}>
+        <Grid item xs={12} sm={4}>
+          <Typography
+            sx={{
+              fontSize: 26,
+              lineHeight: "36px",
+              fontWeight: 400,
+              mb: {xs: 2},
+            }}
+          >
             Benefits of Remote Services
           </Typography>
         </Grid>
-        <Grid item xs={8} mb={7.5}>
+        <Grid item xs={12} sm={8} mb={7.5}>
           <Typography
             color="text.secondary"
             sx={{fontSize: 16, lineHeight: "24px", fontWeight: 400}}
@@ -49,10 +56,11 @@ const RemoteServicesBenefits = () => (
         <Grid item xs={12}>
           <Grid
             container
-            direction="row"
             sx={{
+              flexDirection: {xs: "column", md: "row"},
               justifyContent: "space-between",
               alignItems: "stretch",
+              gap: 3,
             }}
           >
             {benefits.map((item) => (

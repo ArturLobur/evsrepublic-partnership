@@ -43,8 +43,10 @@ const SectionRemoteServices = () => (
         container
         direction="row"
         sx={{
+          flexDirection: {xs: "column", md: "row"},
           justifyContent: "space-between",
           alignItems: "stretch",
+          gap: 3,
         }}
       >
         {operations.map((item) => (

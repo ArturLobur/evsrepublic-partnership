@@ -31,7 +31,10 @@ const benefitsItems = [
 const LaborTimesBenefits = () => {
   return (
     <Box>
-      <Typography component="h3" sx={{fontSize: 26, mb: 4}}>
+      <Typography
+        component="h3"
+        sx={{fontSize: 26, mb: 4, textAlign: {xs: "center", sm: "initial"}}}
+      >
         Benefits of Using Tesla Labor Times
       </Typography>
       <Grid

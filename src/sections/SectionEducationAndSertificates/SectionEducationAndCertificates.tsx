@@ -165,15 +165,20 @@ const SectionEducationAndCertificates = () => (
         </Grid>
       </HeaderForSections>
       <Box>
-        <Typography component="h3" sx={{fontSize: 26, mb: 4}}>
+        <Typography
+          component="h3"
+          sx={{fontSize: 26, mb: 4, textAlign: {xs: "center", sm: "initial"}}}
+        >
           Examples of Certifications
         </Typography>
         <Grid
           container
           direction="row"
           sx={{
+            flexDirection: {xs: "column", md: "row"},
             justifyContent: "space-between",
             alignItems: "stretch",
+            gap: 3,
           }}
         >
           {examplesOfCertifications.map((e, index) => (

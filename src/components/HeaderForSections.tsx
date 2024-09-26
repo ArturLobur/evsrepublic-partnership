@@ -25,12 +25,12 @@ const HeaderForSections: React.FC<SectionsHeaderPropsI> = ({
         {title}
       </Typography>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} sm={6}>
       <Typography sx={{fontSize: 26, lineHeight: "36px", fontWeight: 400}}>
         {firstDescription}
       </Typography>
     </Grid>
-    <Grid item xs={6} mb={7.5}>
+    <Grid item xs={12} sm={6} mb={7.5}>
       <Typography
         color="text.secondary"
         sx={{fontSize: 16, lineHeight: "24px", fontWeight: 400}}
