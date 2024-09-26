@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <AppBar
       position="absolute"
-      sx={{background: "none", boxShadow: "none", mt: 2}}
+      sx={{background: "none", boxShadow: "none", mt: {xs: 6, sm: 2}}}
     >
       <Container maxWidth={containerSize}>
         <Toolbar variant="regular" sx={{p: "0 !important"}}>

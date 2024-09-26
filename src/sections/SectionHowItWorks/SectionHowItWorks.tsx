@@ -101,7 +101,7 @@ const SectionHowItWorks = () => (
       pt: {xl: 4, lg: 0},
       color: "white",
       bgcolor: "#06090a",
-      pb: 10,
+      pb: {xs: 1, sm: 10},
     }}
   >
     <Container maxWidth={containerSize}>

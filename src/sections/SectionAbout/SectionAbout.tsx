@@ -11,7 +11,7 @@ export default function SectionAbout() {
     <Box
       sx={{
         pt: "228px",
-        height: "800px",
+        height: {xs: "auto", sm: "800px"},
         backgroundImage: `url(${backgroundImg})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

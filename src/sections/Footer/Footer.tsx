@@ -57,7 +57,14 @@ export default function Footer() {
             />
           </Grid>
           <Grid item xs={12}>
-            <MenuContainer sx={{display: "flex", justifyContent: "center"}}>
+            <MenuContainer
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: {xs: "wrap", sm: "nowrap"},
+                gap: {xs: 3, sm: 2},
+              }}
+            >
               {menuItems.map((item) => (
                 <Link
                   underline="hover"
@@ -65,7 +72,6 @@ export default function Footer() {
                   color="text.primary"
                   sx={{
                     p: 0,
-                    ml: 2,
                     cursor: "pointer",
                     fontSize: 16,
                     fontWeight: 500,

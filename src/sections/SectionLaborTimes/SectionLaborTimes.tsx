@@ -16,7 +16,7 @@ const SectionLaborTimes = () => {
     <Box
       id="laborTimes"
       sx={{
-        pt: {xl: 4, lg: 0},
+        pt: {xs: 6, sm: 4, lg: 0},
         color: "white",
         bgcolor: "#06090a",
         pb: 12,
@@ -30,7 +30,7 @@ const SectionLaborTimes = () => {
             position: "relative",
           }}
         >
-          <Box sx={{paddingBottom: 12}}>
+          <Box sx={{pb: {xs: 0, sm: 12}}}>
             <Box
               sx={{
                 position: "relative",
@@ -87,7 +87,7 @@ const SectionLaborTimes = () => {
             <Box
               component="img"
               sx={{
-                display: {xs: "none", sm: "block"},
+                display: {xs: "none", md: "block"},
                 position: "absolute",
                 right: 0,
                 top: -110,
