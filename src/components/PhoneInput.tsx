@@ -1,5 +1,5 @@
+import {InputBase} from "@mui/material";
 import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import React from "react";
 
 import {useDialog} from "../store/DialogContext.tsx";
@@ -41,24 +41,34 @@ const PhoneInput = () => {
       alignSelf="center"
       spacing={1}
       useFlexGap
-      sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
+      sx={{
+        p: {xs: "20px", sm: "10px 10px 10px 30px"},
+        maxWidth: 500,
+        width: {xs: "95%", sm: "100%"},
+        background:
+          "linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.15) 100%)",
+        border: "1px solid rgba(255, 255, 255, 0.15)",
+        borderRadius: {xs: "50px", sm: "100px"},
+        justifyContent: "space-between",
+      }}
     >
-      <TextField
-        hiddenLabel
+      <InputBase
         required
-        size="small"
-        variant="outlined"
         aria-label="Enter your phone number"
         placeholder="Your phone number"
         type="tel"
-        id="Telephone"
         autoComplete="tel"
+        id="Telephone"
         name="Telephone"
         value={formValue}
         onChange={(e) => handleTelephoneChange(e)}
         inputProps={{
           minLength: 10,
           maxLength: 15,
+        }}
+        sx={{
+          flex: 1,
+          border: "none",
         }}
       />
       <CustomButton
