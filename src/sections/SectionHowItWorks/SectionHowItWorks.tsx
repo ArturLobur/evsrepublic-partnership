@@ -17,11 +17,11 @@ const textItems = [
     title: "Partnership Enrollment",
     description: [
       {
-        main: "Step 1: Registration: ",
+        main: "Step 1 Registration: ",
         text: "Begin by registering your interest through our online platform. Provide basic details about your auto repair shop, and one of our representatives will contact you to discuss the next steps.",
       },
       {
-        main: "Step 2: Choose Your Partnership Level: ",
+        main: "Step 2 Choose Your Partnership Level: ",
         text: "Based on your needs, you can select between our Premium or Standard partnership levels. Premium partners receive enhanced support, including direct client flow from our website and priority access to tools and resources.",
       },
     ],
@@ -95,7 +95,7 @@ const textItems = [
 
 const SectionHowItWorks = () => (
   <Box
-    id="education"
+    id="howItWorks"
     sx={{
       pt: {xl: 4, lg: 0},
       color: "white",

@@ -50,7 +50,10 @@ const Header = () => {
     );
 
   return (
-    <AppBar sx={{background: "none", boxShadow: "none", mt: 2}}>
+    <AppBar
+      position="absolute"
+      sx={{background: "none", boxShadow: "none", mt: 2}}
+    >
       <Container maxWidth="xl">
         <Toolbar variant="regular" sx={{p: "0 !important"}}>
           <Menu

@@ -2,6 +2,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider} from "@mui/material/styles";
 
 import DialogAlert from "../components/DialogAlert.tsx";
+import Footer from "../sections/Footer/Footer.tsx";
 import Header from "../sections/Header/Header.tsx";
 import SectionAbout from "../sections/SectionAbout/SectionAbout.tsx";
 import SectionEducationAndCertificates from "../sections/SectionEducationAndSertificates/SectionEducationAndCertificates.tsx";
@@ -13,23 +14,22 @@ import SectionRemoteServices from "../sections/SectionRemoteServices/SectionRemo
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {theme} from "./appTheme.ts";
 
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <DialogProvider>
-        <CssBaseline />
-        <Header />
-        <SectionAbout />
-        <SectionLaborTimes />
-        <SectionRemoteServices />
-        <RemoteServicesBenefits />
-        <SectionEducationAndCertificates />
-        <SectionMarketing />
-        <SectionHowItWorks />
-        <DialogAlert />
-      </DialogProvider>
-    </ThemeProvider>
-  );
-};
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <DialogProvider>
+      <CssBaseline />
+      <Header />
+      <SectionAbout />
+      <SectionLaborTimes />
+      <SectionRemoteServices />
+      <RemoteServicesBenefits />
+      <SectionEducationAndCertificates />
+      <SectionMarketing />
+      <SectionHowItWorks />
+      <Footer />
+      <DialogAlert />
+    </DialogProvider>
+  </ThemeProvider>
+);
 
 export default App;
