@@ -1,6 +1,7 @@
 export const siteColors = {
   white: "white",
   grey: "#d3d6dd",
+  secondary: "#D3D6DD",
   neon: "#c6f54c",
   deepBlack: "#0a0a11",
   black: "#1c1d24",
@@ -10,8 +11,9 @@ export const siteColors = {
 export const menuItems = [
   {name: "laborTimes", label: "Labor Times"},
   {name: "service", label: "Remote Services"},
-  {name: "coursesAndCertifications", label: "Education & Certificates"},
-
+  {name: "education", label: "Education & Certificates"},
   {name: "marketing", label: "Marketing"},
   {name: "howItWorks", label: "How It Works"},
 ];
+
+export const containerSize = "xl";
