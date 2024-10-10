@@ -27,7 +27,7 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
           color="secondary"
           variant="outlined"
           size="small"
-          name="sign-in"
+          name="sign-up"
           onClick={onButtonClick}
         >
           Sign up
@@ -36,7 +36,7 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
           color="primary"
           variant="contained"
           size="small"
-          name="sign-up"
+          name="sign-in"
           onClick={onButtonClick}
         >
           Sign in

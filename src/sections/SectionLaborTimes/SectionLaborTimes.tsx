@@ -16,7 +16,7 @@ const SectionLaborTimes = () => {
     <Box
       id="laborTimes"
       sx={{
-        pt: {xs: 6, sm: 4, lg: 0},
+        pt: {xs: 6, sm: 4},
         color: "white",
         bgcolor: "#06090a",
         pb: 12,
