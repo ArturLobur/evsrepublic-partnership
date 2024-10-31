@@ -1,11 +1,19 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 import backgroundImg from "../../assets/getStartedImg.png";
-import PhoneInput from "../../components/PhoneInput.tsx";
+import CustomButton from "../../components/CustomButton.tsx";
+import ModalWindow from "../../components/ModalWindow.tsx";
 import {containerSize} from "../../system/constants.ts";
+import SignUp from "../Auth/SignUp.tsx";
 
 const LaborTimesGetStarted = () => {
+  const [modalOpen, setModalOpen] = React.useState(false);
+
+  const handleButtonClick = () => {
+    setModalOpen(!modalOpen);
+  };
   return (
     <Container
       maxWidth={containerSize}
@@ -49,7 +57,17 @@ const LaborTimesGetStarted = () => {
         improve customer satisfaction, and stay competitive in the growing EV
         market.
       </Typography>
-      <PhoneInput />
+      <ModalWindow onOpen={modalOpen} onClose={() => setModalOpen(!modalOpen)}>
+        <SignUp onClose={() => setModalOpen(false)} />
+      </ModalWindow>
+      <CustomButton
+        color="primary"
+        variant="contained"
+        name="sign-up"
+        onClick={handleButtonClick}
+      >
+        SIGN UP NOW
+      </CustomButton>
     </Container>
   );
 };

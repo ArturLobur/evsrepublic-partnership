@@ -1,12 +1,21 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 import backgroundImg from "../../assets/backgroundImg.png";
-import PhoneInput from "../../components/PhoneInput.tsx";
+import CustomButton from "../../components/CustomButton.tsx";
+import ModalWindow from "../../components/ModalWindow.tsx";
 import {containerSize} from "../../system/constants.ts";
+import SignUp from "../Auth/SignUp.tsx";
 
 export default function SectionAbout() {
+  const [modalOpen, setModalOpen] = React.useState(false);
+
+  const handleButtonClick = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <Box
       sx={{
@@ -70,7 +79,20 @@ export default function SectionAbout() {
             opening new revenue streams and enhancing their service offerings.
           </Typography>
         </Box>
-        <PhoneInput />
+        <ModalWindow
+          onOpen={modalOpen}
+          onClose={() => setModalOpen(!modalOpen)}
+        >
+          <SignUp onClose={() => setModalOpen(false)} />
+        </ModalWindow>
+        <CustomButton
+          color="primary"
+          variant="contained"
+          name="sign-up"
+          onClick={handleButtonClick}
+        >
+          SIGN UP NOW
+        </CustomButton>
       </Container>
     </Box>
   );
