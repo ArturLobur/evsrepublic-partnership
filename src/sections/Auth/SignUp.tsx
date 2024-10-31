@@ -2,11 +2,13 @@ import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {useDialog} from "../../store/DialogContext.tsx";
+import {states} from "../../system/constants.ts";
 import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
 
 export default function SignUp({onClose}: {onClose: () => void}) {
@@ -77,25 +79,29 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="numberShops"
-          label="Number of Auto Repair Shops"
+          label="Average Monthly Requests for Tesla Repairs"
           type="text"
           id="numberShops"
         />
         <TextField
           margin="normal"
-          required
           fullWidth
+          select
           name="state"
           label="State"
-          type="text"
           id="state"
-        />
+          required
+        >
+          {states.map((state) => (
+            <MenuItem key={state.value} value={state.value}>
+              {state.label}
+            </MenuItem>
+          ))}
+        </TextField>
         <TextField
           margin="normal"
-          required
           fullWidth
           name="city"
           label="City"
@@ -104,7 +110,6 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="years"
           label="Years in Operation"

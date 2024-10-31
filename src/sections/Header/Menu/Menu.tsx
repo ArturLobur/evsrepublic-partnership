@@ -24,19 +24,19 @@ const Menu: React.FC<MenuProps> = ({scrollToSection, onButtonClick}) => {
     <Box sx={{width: "100%"}}>
       <ButtonsContainer sx={{display: {xs: "none", md: "flex"}}}>
         <CustomButton
-          color="secondary"
-          variant="outlined"
+          color="primary"
+          variant="contained"
           size="small"
-          name="sign-in"
+          name="sign-up"
           onClick={onButtonClick}
         >
           Sign up
         </CustomButton>
         <CustomButton
-          color="primary"
-          variant="contained"
+          color="secondary"
+          variant="outlined"
           size="small"
-          name="sign-up"
+          name="sign-in"
           onClick={onButtonClick}
         >
           Sign in

@@ -20,7 +20,7 @@ const Header = () => {
     setOpenMenu(newOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     const offset = 128;
     if (sectionElement) {
@@ -32,7 +32,7 @@ const Header = () => {
       });
       setOpenMenu(false);
     }
-  };
+  }, []);
 
   const handleButtonClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
