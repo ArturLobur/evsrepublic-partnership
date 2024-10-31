@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 import {useDialog} from "../../store/DialogContext.tsx";
-import {states} from "../../system/constants.ts";
+import {averageRepairs, states} from "../../system/constants.ts";
 import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
 
 export default function SignUp({onClose}: {onClose: () => void}) {
@@ -80,10 +80,34 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         <TextField
           margin="normal"
           fullWidth
-          name="numberShops"
+          name="companyName"
+          label="Company Name"
+          type="text"
+          id="companyName"
+        />
+        <TextField
+          margin="normal"
+          select
+          fullWidth
+          name="averageRepairs"
           label="Average Monthly Requests for Tesla Repairs"
           type="text"
-          id="numberShops"
+          id="averageRepairs"
+        >
+          {averageRepairs.map((repairs) => (
+            <MenuItem key={repairs.value} value={repairs.value}>
+              {repairs.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <TextField
+          margin="normal"
+          fullWidth
+          name="country"
+          label="Country"
+          type="text"
+          id="country"
+          defaultValue="United States"
         />
         <TextField
           margin="normal"
@@ -92,7 +116,6 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           name="state"
           label="State"
           id="state"
-          required
         >
           {states.map((state) => (
             <MenuItem key={state.value} value={state.value}>
@@ -107,6 +130,15 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           label="City"
           type="text"
           id="city"
+        />
+        <TextField
+          margin="normal"
+          fullWidth
+          name="address"
+          label="Address"
+          type="text"
+          id="address"
+          placeholder="Example: 1234 Main St, Suite 210"
         />
         <TextField
           margin="normal"
