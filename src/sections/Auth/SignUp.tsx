@@ -77,16 +77,14 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="numberShops"
-          label="Number of Auto Repair Shops"
+          label="Average Monthly Requests for Tesla Repairs"
           type="text"
           id="numberShops"
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="state"
           label="State"
@@ -95,7 +93,6 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="city"
           label="City"
@@ -104,7 +101,6 @@ export default function SignUp({onClose}: {onClose: () => void}) {
         />
         <TextField
           margin="normal"
-          required
           fullWidth
           name="years"
           label="Years in Operation"
