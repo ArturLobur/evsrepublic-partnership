@@ -70,3 +70,11 @@ export const states = [
   {label: "Wisconsin", value: "Wisconsin"},
   {label: "Wyoming", value: "Wyoming"},
 ];
+
+export const averageRepairs = [
+  {label: "Less than 5 requests", value: 5},
+  {label: "5–10 requests", value: 10},
+  {label: "10–20 requests", value: 20},
+  {label: "20-50 requests", value: 50},
+  {label: "More than 50 requests", value: 60},
+];
