@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 
 export async function sendDataToGoogleDoc(data: FormData) {
   fetch(
-    "https://script.google.com/macros/s/AKfycbxatqUhiA0SzdDiThomScNsnDD2HhZK0DlKBKGHCIk_4syC6iJ683CjYsNtAPDox8qySw/exec",
+    "https://script.google.com/macros/s/AKfycbz-NW064vhgsnX9Y4mW35qdUa8MCJRkFbO0phZYS2x3NLt4oGucFpNkmnol001R1-YFEw/exec",
     {
       method: "POST",
       body: data,
