@@ -25,6 +25,8 @@ export default function SignUp({onClose}: {onClose: () => void}) {
   return (
     <Box
       sx={{
+        maxHeight: "80vh",
+        overflowY: "auto",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
