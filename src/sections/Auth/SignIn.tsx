@@ -15,6 +15,7 @@ export default function SignIn() {
   return (
     <Box
       sx={{
+        p: 4,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
