@@ -56,7 +56,7 @@ export default function SectionAbout() {
               lineHeight: "66px",
             }}
           >
-            EV repairs
+            EV repair!
           </Typography>
         </Typography>
         <Box sx={{maxWidth: 680, mb: 5}}>
@@ -69,14 +69,16 @@ export default function SectionAbout() {
               lineHeight: "25px",
             }}
           >
-            Upgrade your existing auto repair shop by integrating EV repair
-            services with our comprehensive solutions.
+            Enhance your auto shop and tap into the EV Market! EV Republic’s
+            comprehensive solutions provide everything you need to begin
+            servicing electric vehicles.
             <br />
             <br />
-            At EV's Republic, we are excited to introduce a unique partnership
+            At EV’s Republic, we are excited to introduce a unique partnership
             opportunity for auto service shop owners. Our mission is to enable
-            these shops to transition smoothly into servicing electric vehicles,
-            opening new revenue streams and enhancing their service offerings.
+            shops across the country to smoothly transition into servicing
+            electric vehicles, creating a new revenue stream and augmenting
+            their service offerings.
           </Typography>
         </Box>
         <ModalWindow

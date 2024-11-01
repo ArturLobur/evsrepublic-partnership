@@ -1,7 +1,5 @@
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
@@ -51,8 +49,7 @@ const SectionLaborTimes = () => {
               <Typography
                 sx={{fontSize: 22, lineHeight: "31px", fontWeight: 400}}
               >
-                Optimize Your Service Efficiency with our project
-                teslalabortime.online.
+                Optimize your service efficiency with us.
               </Typography>
               <Typography
                 color="text.secondary"
@@ -63,26 +60,6 @@ const SectionLaborTimes = () => {
                 detailed repair times for various Tesla components, ensuring
                 that your service operations are efficient and reliable.
               </Typography>
-              <Box>
-                <Link
-                  sx={{
-                    textTransform: "uppercase",
-                    fontSize: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                  }}
-                  href="https://teslalabortime.online/"
-                  target="_blank"
-                  underline="hover"
-                >
-                  <ArrowCircleRightOutlinedIcon
-                    fontSize="large"
-                    color="primary"
-                  />
-                  VISIT teslalabortime.online
-                </Link>
-              </Box>
             </Box>
             <Box
               component="img"

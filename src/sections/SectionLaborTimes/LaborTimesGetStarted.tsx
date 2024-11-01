@@ -52,7 +52,7 @@ const LaborTimesGetStarted = () => {
           mb: 3,
         }}
       >
-        in our partnership program to gain access to Tesla Labor Times and
+        In our partnership program to gain access to Tesla Labor Times and
         transform your auto service business. Enhance your repair efficiency,
         improve customer satisfaction, and stay competitive in the growing EV
         market.

@@ -11,7 +11,7 @@ import {containerSize} from "../../system/constants.ts";
 const operations = [
   {
     icon: <DiagnosticIcon />,
-    title: "Diagnoctic",
+    title: "Diagnostic",
     description:
       "Perform advanced diagnostics remotely to quickly identify and resolve issues with EVs. Use state-of-the-art tools and software to diagnose problems without the need for a physical inspection.",
   },

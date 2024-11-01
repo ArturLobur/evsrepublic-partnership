@@ -26,7 +26,6 @@ const ModalWindow: FC<ModalWindowProps> = (props) => (
         bgcolor: `${siteColors.black}`,
         border: "2px solid #000",
         boxShadow: 24,
-        p: 4,
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",

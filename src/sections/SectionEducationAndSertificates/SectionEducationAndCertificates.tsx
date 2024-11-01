@@ -14,7 +14,7 @@ const items = [
   {
     title: "Intro to EV Technology",
     mainDescription:
-      "Gain a fundamental understanding of electric vehicle systems, components, and operation.",
+      "Gain a fundamental understanding of electric vehicle systems, components, and operations.",
     additionalDescription: [
       {
         list: "EV architecture, electric motors, battery technology, and charging systems.",
