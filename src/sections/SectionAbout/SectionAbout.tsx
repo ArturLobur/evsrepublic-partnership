@@ -59,6 +59,17 @@ export default function SectionAbout() {
             EV repair
           </Typography>
         </Typography>
+        <Box sx={{display: {xs: "flex", sm: "none"}, mb: 4}}>
+          <CustomButton
+            color="primary"
+            variant="contained"
+            name="sign-up"
+            onClick={handleButtonClick}
+          >
+            SIGN UP NOW
+          </CustomButton>
+        </Box>
+
         <Box sx={{maxWidth: 680, mb: 5}}>
           <Typography
             textAlign="center"
@@ -87,14 +98,16 @@ export default function SectionAbout() {
         >
           <SignUp onClose={() => setModalOpen(false)} />
         </ModalWindow>
-        <CustomButton
-          color="primary"
-          variant="contained"
-          name="sign-up"
-          onClick={handleButtonClick}
-        >
-          SIGN UP NOW
-        </CustomButton>
+        <Box sx={{display: {xs: "none", sm: "flex"}}}>
+          <CustomButton
+            color="primary"
+            variant="contained"
+            name="sign-up"
+            onClick={handleButtonClick}
+          >
+            SIGN UP NOW
+          </CustomButton>
+        </Box>
       </Container>
     </Box>
   );
