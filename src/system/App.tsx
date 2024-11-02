@@ -27,7 +27,7 @@ const App = () => (
       <SectionEducationAndCertificates />
       <SectionMarketing />
       <SectionHowItWorks />
-      {/*<SectionSema />*/}
+      <SectionSema />
       <Footer />
       <DialogAlert />
     </DialogProvider>
