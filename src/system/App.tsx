@@ -11,6 +11,7 @@ import SectionLaborTimes from "../sections/SectionLaborTimes/SectionLaborTimes.t
 import SectionMarketing from "../sections/SectionMarketing/SectionMarketing.tsx";
 import RemoteServicesBenefits from "../sections/SectionRemoteServices/RemoteServicesBenefits.tsx";
 import SectionRemoteServices from "../sections/SectionRemoteServices/SectionRemoteServices.tsx";
+import SectionSema from "../sections/SectionSema/SectionSema.tsx";
 import {DialogProvider} from "../store/DialogContext.tsx";
 import {theme} from "./appTheme.ts";
 
@@ -26,6 +27,7 @@ const App = () => (
       <SectionEducationAndCertificates />
       <SectionMarketing />
       <SectionHowItWorks />
+      {/*<SectionSema />*/}
       <Footer />
       <DialogAlert />
     </DialogProvider>

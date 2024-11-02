@@ -19,7 +19,7 @@ export default function SectionAbout() {
   return (
     <Box
       sx={{
-        pt: "228px",
+        pt: {xs: "170px", md: "228px"},
         height: {xs: "auto", sm: "800px"},
         backgroundImage: `url(${backgroundImg})`,
         backgroundSize: "cover",
@@ -56,7 +56,7 @@ export default function SectionAbout() {
               lineHeight: "66px",
             }}
           >
-            EV repair!
+            EV repair
           </Typography>
         </Typography>
         <Box sx={{maxWidth: 680, mb: 5}}>

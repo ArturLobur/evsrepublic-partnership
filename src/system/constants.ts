@@ -14,6 +14,7 @@ export const menuItems = [
   {name: "education", label: "Education & Certificates"},
   {name: "marketing", label: "Marketing"},
   {name: "howItWorks", label: "How It Works"},
+  {name: "sema", label: "SEMA SHOW 2024"},
 ];
 
 export const containerSize = "xl";
