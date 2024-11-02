@@ -5,7 +5,7 @@ import React from "react";
 interface SectionsHeaderPropsI {
   title: string;
   firstDescription: string;
-  secondDescription: string;
+  secondDescription?: string;
   children: React.ReactNode;
 }
 
