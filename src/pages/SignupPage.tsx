@@ -180,7 +180,7 @@ const SignupPage = () => {
           margin="normal"
           fullWidth
           name="address"
-          label="Address"
+          label="Street address"
           type="text"
           id="address"
           placeholder="Example: 1234 Main St, Suite 210"
