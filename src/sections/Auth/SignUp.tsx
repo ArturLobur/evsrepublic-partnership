@@ -41,7 +41,6 @@ export default function SignUp({onClose}: {onClose: () => void}) {
     }
   };
 
-  // Функція для обробки подій введення в поле телефону
   const handlePhoneInput = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const key = event.key;
     if (!/^[0-9]$/.test(key) && key !== "Backspace") {
