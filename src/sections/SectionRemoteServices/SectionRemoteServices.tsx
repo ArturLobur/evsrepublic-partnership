@@ -23,7 +23,7 @@ const operations = [
   },
   {
     icon: <ConsultingIcon />,
-    title: "Consulting",
+    title: "Support",
     description:
       "Receive expert advice and consulting to optimize your operations and tackle complex technical problems. Benefit from our team’s extensive knowledge and experience in the EV industry.",
   },
