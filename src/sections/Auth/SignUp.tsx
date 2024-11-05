@@ -173,7 +173,7 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           margin="normal"
           fullWidth
           name="address"
-          label="Address"
+          label="Street address"
           type="text"
           id="address"
           placeholder="Example: 1234 Main St, Suite 210"
