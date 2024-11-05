@@ -112,9 +112,9 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           type="tel"
           id="tel"
           autoComplete="tel"
-          error={!!phoneError} // Додаємо стиль помилки
-          helperText={phoneError} // Виводимо повідомлення про помилку
-          onKeyPress={handlePhoneInput} // Додаємо обробник для введення
+          error={!!phoneError}
+          helperText={phoneError}
+          onKeyDown={handlePhoneInput}
         />
         <TextField
           margin="normal"
