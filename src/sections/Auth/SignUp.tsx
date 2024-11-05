@@ -22,6 +22,12 @@ export default function SignUp({onClose}: {onClose: () => void}) {
     (event.target as HTMLFormElement).reset();
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -39,7 +45,12 @@ export default function SignUp({onClose}: {onClose: () => void}) {
       <Typography component="h1" variant="h5">
         Sign up as a new partner
       </Typography>
-      <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        onKeyDown={handleKeyDown}
+        sx={{mt: 1}}
+      >
         <TextField
           margin="normal"
           autoComplete="given-name"
@@ -68,6 +79,7 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           id="email"
           label="Email Address"
           name="Email"
+          type="email"
           autoComplete="email"
         />
         <TextField
