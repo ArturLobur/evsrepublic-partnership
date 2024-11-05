@@ -13,9 +13,22 @@ import {sendDataToGoogleDoc} from "../../utils/sendDataToGoogleDoc.ts";
 
 export default function SignUp({onClose}: {onClose: () => void}) {
   const {toggleDialog} = useDialog();
+  const [phoneError, setPhoneError] = React.useState<string>(""); // Додано для зберігання помилки
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    const phone = data.get("Telephone") as string;
+
+    const phoneRegex = /^\+?[0-9]{10,11}$/;
+    if (!phoneRegex.test(phone)) {
+      setPhoneError("Please enter a valid phone number with 11 digits.");
+      return;
+    } else {
+      setPhoneError("");
+    }
+
     sendDataToGoogleDoc(data)
       .then(() => onClose())
       .then(() => toggleDialog());
@@ -24,6 +37,14 @@ export default function SignUp({onClose}: {onClose: () => void}) {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
     if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
+
+  // Функція для обробки подій введення в поле телефону
+  const handlePhoneInput = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const key = event.key;
+    if (!/^[0-9]$/.test(key) && key !== "Backspace") {
       event.preventDefault();
     }
   };
@@ -91,6 +112,9 @@ export default function SignUp({onClose}: {onClose: () => void}) {
           type="tel"
           id="tel"
           autoComplete="tel"
+          error={!!phoneError} // Додаємо стиль помилки
+          helperText={phoneError} // Виводимо повідомлення про помилку
+          onKeyPress={handlePhoneInput} // Додаємо обробник для введення
         />
         <TextField
           margin="normal"
