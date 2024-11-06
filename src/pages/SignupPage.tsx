@@ -193,6 +193,16 @@ const SignupPage = () => {
           type="text"
           id="years"
         />
+        <TextField
+          margin="normal"
+          fullWidth
+          name="comments"
+          label="Comments"
+          type="text"
+          id="comments"
+          multiline
+          rows={5}
+        />
 
         <Button type="submit" fullWidth variant="contained" sx={{mt: 3, mb: 2}}>
           Sign Up
